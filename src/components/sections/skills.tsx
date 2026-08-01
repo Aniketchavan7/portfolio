@@ -80,9 +80,47 @@ const SkillsSection = () => {
   return (
     <SectionWrapper
       id="skills"
-      className="w-full h-screen md:h-[150dvh] pointer-events-none"
+      className="w-full min-h-screen flex flex-col justify-center py-20"
     >
       <SectionHeader id="skills" title="Tech Stack" desc="(hint: press a key)" />
+
+      <ul className="mx-auto grid w-full max-w-5xl grid-cols-2 gap-3 px-4 sm:grid-cols-3 sm:gap-4 md:grid-cols-4 lg:grid-cols-5 mt-12 pointer-events-auto">
+        {Object.values(SKILLS).map((skill) => (
+          <li
+            key={skill.name}
+            style={{ "--skill": skill.color } as CSSProperties}
+            className={cn(
+              "pointer-events-auto",
+              "group relative flex flex-col items-center justify-center gap-2 overflow-hidden rounded-2xl p-4",
+              "border border-border/60 bg-background/40 backdrop-blur-md",
+              "transition-[transform,border-color,background-color,box-shadow] duration-300",
+              "hover:-translate-y-1 hover:border-[var(--skill)] hover:bg-secondary/40",
+              "hover:shadow-[0_10px_40px_-12px_var(--skill)]"
+            )}
+          >
+            <span
+              aria-hidden
+              style={{ background: "var(--skill)" }}
+              className="pointer-events-none absolute -top-6 h-16 w-16 rounded-full opacity-25 blur-2xl transition-opacity duration-300 group-hover:opacity-70"
+            />
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src={skill.icon}
+              alt={skill.label}
+              width={40}
+              height={40}
+              loading="lazy"
+              className="relative size-8 object-contain drop-shadow-sm transition-transform duration-300 group-hover:scale-110 md:size-10"
+            />
+            <span className="relative text-center text-xs font-semibold text-foreground/90 transition-colors group-hover:text-foreground md:text-sm">
+              {skill.label}
+            </span>
+            <span className="relative text-center text-[10px] text-muted-foreground leading-tight line-clamp-2 px-1">
+              {skill.shortDescription}
+            </span>
+          </li>
+        ))}
+      </ul>
     </SectionWrapper>
   );
 };
