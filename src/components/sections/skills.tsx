@@ -64,8 +64,11 @@ const SkillsSection = () => {
                 loading="lazy"
                 className="relative size-9 object-contain drop-shadow-sm transition-transform duration-300 group-hover:scale-110 md:size-11"
               />
-              <span className="relative text-center text-xs font-medium text-foreground/80 transition-colors group-hover:text-foreground md:text-sm">
+              <span className="relative text-center text-xs font-semibold text-foreground/90 transition-colors group-hover:text-foreground md:text-sm">
                 {skill.label}
+              </span>
+              <span className="relative text-center text-[10px] text-muted-foreground leading-tight line-clamp-2 px-1">
+                {skill.shortDescription}
               </span>
             </li>
           ))}
