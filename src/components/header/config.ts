@@ -29,7 +29,7 @@ const links: Link[] = [
   {
     title: 'News',
     href: '/news',
-    thumbnail: '/assets/nav-link-previews/landing.png',
+    thumbnail: '/assets/nav-link-previews/news.png',
   },
   {
     title: 'Contact',
