@@ -1,0 +1,43 @@
+---
+title: "Building Multi-Agent AI Workflows with LangChain & LangGraph"
+publishedAt: "2024-11-15"
+summary: "Insights from engineering an automated multi-agent content and research pipeline using Python, LangGraph, and ChromaDB."
+author: "Aniket Chavan"
+tags: ["Generative AI", "LangChain", "Python", "Multi-Agent"]
+---
+
+# Building Multi-Agent AI Workflows with LangChain & LangGraph
+
+Generative AI applications have evolved beyond single prompt-response interactions. Modern AI systems require autonomous coordination between specialized agents to solve complex, multi-step workflows.
+
+## The Architecture of Multi-Agent Systems
+
+When engineering content automation at scale, splitting tasks into dedicated agents produces significantly higher quality outputs:
+
+1. **Research Agent**: Fetches web search results, scrapes technical articles, and extracts vector embeddings into ChromaDB.
+2. **Drafting Agent**: Synthesizes grounded facts to draft structured content based on research context.
+3. **Review & Refinement Agent**: Evaluates accuracy, checks constraints, and refines formatting before publishing.
+
+### Why LangGraph?
+
+LangGraph provides cyclical graph orchestration, allowing state persistence, conditional branching, and human-in-the-loop validation for production LLM pipelines.
+
+```python
+# Example graph flow structure
+from langgraph.graph import StateGraph, END
+
+workflow = StateGraph(AgentState)
+workflow.add_node("researcher", research_agent)
+workflow.add_node("writer", writer_agent)
+
+workflow.set_entry_point("researcher")
+workflow.add_edge("researcher", "writer")
+workflow.add_edge("writer", END)
+```
+
+## Key Learnings
+
+- **Vector Grounding**: Combining RAG (Retrieval-Augmented Generation) prevents LLM hallucination in domain-specific tasks.
+- **State Management**: Keeping structured state across node transitions ensures clean error handling and retries.
+
+Multi-agent architectures are shaping the future of autonomous software operations! 🚀

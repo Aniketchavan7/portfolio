@@ -1,0 +1,36 @@
+---
+title: "Building Resilient Microservices with Java & Spring Boot"
+publishedAt: "2024-12-28"
+summary: "Best practices for architecting high-throughput, fault-tolerant enterprise backend services using Spring Boot and Java."
+author: "Aniket Chavan"
+tags: ["Java", "Spring Boot", "Backend", "Microservices"]
+---
+
+# Building Resilient Microservices with Java & Spring Boot
+
+Java and Spring Boot remain the cornerstone of enterprise backend engineering. Designing scalable microservices requires careful consideration of concurrency, fault tolerance, and API contracts.
+
+## Architectural Foundations
+
+1. **Layered Architecture**: Decoupling Controllers, Services, Repositories, and DTOs ensures maintainable codebase growth.
+2. **Resilience Patterns**: Implementing Circuit Breakers (Resilience4j) and Rate Limiters prevents cascading failures across distributed services.
+3. **Reactive Streams & Multithreading**: Utilizing Virtual Threads (Java 21 Project Loom) to handle thousands of concurrent requests with low memory overhead.
+
+```java
+@RestController
+@RequestMapping("/api/v1/orders")
+public class OrderController {
+    private final OrderService orderService;
+
+    public OrderController(OrderService orderService) {
+        this.orderService = orderService;
+    }
+
+    @PostMapping
+    public ResponseEntity<OrderResponseDto> createOrder(@Valid @RequestBody OrderRequestDto dto) {
+        return ResponseEntity.ok(orderService.processOrder(dto));
+    }
+}
+```
+
+A clean, strongly-typed backend architecture is essential for building scalable applications that stand the test of time.

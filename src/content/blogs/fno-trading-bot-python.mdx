@@ -1,0 +1,39 @@
+---
+title: "Automating Indian Market F&O Trading Strategies in Python"
+publishedAt: "2024-09-10"
+summary: "How I built an algorithmic trading bot using TA-Lib, technical indicators, and automated crossover logic."
+author: "Aniket Chavan"
+tags: ["Python", "Trading Automation", "TA-Lib", "Algorithmic Trading"]
+---
+
+# Automating Indian Market F&O Trading Strategies in Python
+
+Algorithmic trading removes emotion from market execution. By automating strategy entry and exit signals based on quantitative indicators, traders can achieve disciplined execution.
+
+## Strategy Logic: EMA & RSI Crossover
+
+The bot calculates technical indicators on real-time and historical candlestick data:
+
+- **Exponential Moving Average (EMA 9 / EMA 21)**: Determines trend direction and bullish/bearish crossovers.
+- **Relative Strength Index (RSI 14)**: Filters momentum to avoid entering overbought or oversold traps.
+
+```python
+import talib
+import numpy as np
+
+# Calculating Technical Indicators
+ema_short = talib.EMA(close_prices, timeperiod=9)
+ema_long = talib.EMA(close_prices, timeperiod=21)
+rsi = talib.RSI(close_prices, timeperiod=14)
+
+# Trigger Condition
+if ema_short[-1] > ema_long[-1] and rsi[-1] > 55:
+    execute_buy_signal()
+```
+
+## Risk Management & Execution
+
+1. **Strict Stop-Loss (SL)**: Built-in fixed percentage and dynamic trailing stop-loss logic.
+2. **Automated Order Placement**: Integration with broker APIs for immediate execution without latency.
+
+Building this bot provided deep insights into data processing, real-time signal generation, and quantitative financial logic! 📈

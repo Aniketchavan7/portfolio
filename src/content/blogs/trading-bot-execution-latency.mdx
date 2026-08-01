@@ -1,0 +1,30 @@
+---
+title: "Low-Latency Execution in Algorithmic Trading Systems"
+publishedAt: "2024-06-18"
+summary: "Reducing signal-to-order execution delay, WebSocket streaming optimizations, and memory efficiency in trading systems."
+author: "Aniket Chavan"
+tags: ["Trading Automation", "Python", "Low Latency", "WebSockets"]
+---
+
+# Low-Latency Execution in Algorithmic Trading Systems
+
+In financial markets, latency can be the difference between a profitable trade and a slippage loss. Optimizing order execution speed is paramount.
+
+## Techniques for Speed Optimization
+
+1. **Persistent WebSocket Connections**: Maintaining persistent WebSocket feeds instead of polling REST endpoints for market ticks.
+2. **In-Memory Order Processing**: Processing signals in memory arrays using NumPy and TA-Lib C-extensions before firing order payloads.
+3. **Asynchronous I/O**: Leveraging `asyncio` to prevent network calls from blocking technical indicator calculations.
+
+```python
+import asyncio
+import websockets
+
+async def stream_market_ticks(ticker):
+    async with websockets.connect(WS_URL) as ws:
+        while True:
+            tick = await ws.recv()
+            process_tick_signal(tick)
+```
+
+Minimizing execution latency unlocks competitive edges in high-volatility derivative markets.

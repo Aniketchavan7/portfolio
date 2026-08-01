@@ -1,0 +1,32 @@
+---
+title: "Advanced RAG Optimization: Hybrid Search, Re-Ranking, & Vector Storage"
+publishedAt: "2025-01-10"
+summary: "Exploring techniques for enhancing Retrieval-Augmented Generation using ChromaDB, Hybrid BM25 search, and semantic re-ranking."
+author: "Aniket Chavan"
+tags: ["RAG", "VectorDB", "ChromaDB", "Search"]
+---
+
+# Advanced RAG Optimization: Hybrid Search, Re-Ranking, & Vector Storage
+
+Retrieval-Augmented Generation (RAG) is the backbone of knowledge-grounded AI applications. However, basic vector retrieval often fails when users ask specific domain queries.
+
+## Key Techniques for Production RAG
+
+### 1. Hybrid Search (Dense + Sparse)
+Dense vector search captures semantic intent, but sparse keyword search (BM25) excels at technical jargon, IDs, and proper nouns. Combining scores via Reciprocal Rank Fusion (RRF) delivers superior retrieval precision.
+
+### 2. Cross-Encoder Re-Ranking
+Instead of relying solely on cosine similarity, re-ranking candidate documents using a Cross-Encoder model yields a dramatic boost in context quality.
+
+### 3. Parent-Child Chunking
+Store small parent chunks for LLM context generation while indexing smaller child chunks for precise vector embedding matches.
+
+```python
+from langchain.retrievers import ParentDocumentRetriever
+from langchain.text_splitter import RecursiveCharacterTextSplitter
+
+parent_splitter = RecursiveCharacterTextSplitter(chunk_size=2000)
+child_splitter = RecursiveCharacterTextSplitter(chunk_size=400)
+```
+
+Optimizing retrieval pipeline accuracy guarantees higher fidelity LLM responses and eliminates hallucinations.

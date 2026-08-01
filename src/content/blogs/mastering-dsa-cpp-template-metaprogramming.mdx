@@ -1,0 +1,39 @@
+---
+title: "Deep Dive into C++ Template Metaprogramming & Custom Data Structures"
+publishedAt: "2024-12-12"
+summary: "Understanding type-generic programming, memory allocation, and generic data structure design in modern C++."
+author: "Aniket Chavan"
+tags: ["C++", "DSA", "Templates", "OOP"]
+---
+
+# Deep Dive into C++ Template Metaprogramming & Custom Data Structures
+
+C++ offers unparalleled control over performance and system resources. Understanding template metaprogramming allows developers to write zero-cost abstractions that compile down to highly optimized machine code.
+
+## Generic Template Linked Lists & Queues
+
+By utilizing C++ templates (`template <typename T>`), data structures can operate seamlessly over any data type without sacrificing performance or memory safety:
+
+```cpp
+template <typename T>
+class Node {
+public:
+    T data;
+    Node* next;
+    Node(T val) : data(val), next(nullptr) {}
+};
+
+template <typename T>
+class LinkedList {
+private:
+    Node<T>* head;
+public:
+    LinkedList() : head(nullptr) {}
+    void insert(T value);
+};
+```
+
+## Key Principles
+
+- **RAII (Resource Acquisition Is Initialization)**: Automatic memory management through smart pointers and custom destructors.
+- **Cache Locality**: Structuring data layout to maximize CPU L1/L2 cache hits for high-performance algorithm execution.
