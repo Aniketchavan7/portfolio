@@ -5,7 +5,7 @@ import { Button } from "../ui/button";
 import SocialMediaButtons from "../social/social-media-icons";
 import { config } from "@/data/config";
 
-async function CopyrightYear() {
+function CopyrightYear() {
   const year = new Date().getFullYear();
   return <>{year}</>;
 }

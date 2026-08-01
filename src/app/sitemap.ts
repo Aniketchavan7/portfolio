@@ -2,6 +2,8 @@ import type { MetadataRoute } from "next";
 import { config } from "@/data/config";
 import { getBlogPosts } from "@/lib/mdx";
 
+export const dynamic = "force-static";
+
 export default function sitemap(): MetadataRoute.Sitemap {
   const posts = getBlogPosts().map((post) => ({
     url: `${config.site}/blogs/${post.slug}`,

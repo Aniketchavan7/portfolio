@@ -7,8 +7,8 @@ import { Textarea } from "./ui/ace-textarea";
 import { cn } from "@/lib/utils";
 import { useToast } from "./ui/use-toast";
 import { Button } from "./ui/button";
-import { useRouter } from "next/navigation";
 import { z } from "zod";
+import { config } from "@/data/config";
 
 const formSchema = z.object({
   fullName: z.string().min(2, "Full name must be at least 2 characters"),
@@ -26,7 +26,6 @@ const ContactForm = () => {
   const [errors, setErrors] = React.useState<FieldErrors>({});
 
   const { toast } = useToast();
-  const router = useRouter();
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -45,41 +44,52 @@ const ContactForm = () => {
 
     setLoading(true);
     try {
-      const res = await fetch("/api/send", {
+      const res = await fetch("/api/contact", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
+        headers: {
+          "Content-Type": "application/json",
+        },
         body: JSON.stringify({ fullName, email, message }),
       });
-      if (!res.ok) {
-        const data = await res.json();
-        throw new Error(data.error || `Request failed (${res.status})`);
+
+      const data = await res.json();
+
+      if (!res.ok || !data.success) {
+        throw new Error(data.message || "Server endpoint unavailable");
       }
+
       toast({
-        title: "Thank you!",
-        description: "I'll get back to you as soon as possible.",
+        title: "Message Sent!",
+        description: "Thank you for reaching out! Your message has been sent directly to my email.",
         variant: "default",
         className: cn("top-0 mx-auto flex fixed md:top-4 md:right-4"),
       });
-      setLoading(false);
+
       setFullName("");
       setEmail("");
       setMessage("");
-      const timer = setTimeout(() => {
-        router.push("/");
-        clearTimeout(timer);
-      }, 1000);
-    } catch (err) {
+    } catch (err: any) {
+      console.warn("API route unavailable or error, falling back to mailto:", err);
+      
+      // Fallback: Open mailto link so user's message is sent via their email client
+      const subject = encodeURIComponent(`Portfolio Inquiry from ${fullName}`);
+      const body = encodeURIComponent(`Name: ${fullName}\nEmail: ${email}\n\nMessage:\n${message}`);
+      window.open(`mailto:${config.email}?subject=${subject}&body=${body}`, "_blank");
+
       toast({
-        title: "Error",
-        description: "Something went wrong! Please try again.",
-        className: cn(
-          "top-0 w-full flex justify-center fixed md:max-w-7xl md:top-4 md:right-4"
-        ),
-        variant: "destructive",
+        title: "Opening Email Client",
+        description: "Your default email application has been opened with your message ready to send!",
+        className: cn("top-0 mx-auto flex fixed md:top-4 md:right-4"),
       });
+
+      setFullName("");
+      setEmail("");
+      setMessage("");
+    } finally {
+      setLoading(false);
     }
-    setLoading(false);
   };
+
   return (
     <form className="min-w-7xl mx-auto sm:mt-4" onSubmit={handleSubmit} aria-busy={loading}>
       <div className="flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-2 mb-4">
@@ -109,7 +119,7 @@ const ContactForm = () => {
       <div className="grid w-full gap-1.5 mb-4">
         <Label htmlFor="content">Your Message</Label>
         <Textarea
-          placeholder="Tell me about about your project,"
+          placeholder="Tell me about your project..."
           id="content"
           value={message}
           onChange={(e) => { setMessage(e.target.value); setErrors((p) => ({ ...p, message: undefined })); }}
@@ -127,7 +137,7 @@ const ContactForm = () => {
         {loading ? (
           <div className="flex items-center justify-center">
             <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-            <p>Please wait</p>
+            <p>Sending message...</p>
           </div>
         ) : (
           <div className="flex items-center justify-center">
