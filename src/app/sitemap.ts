@@ -19,6 +19,21 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 1,
     },
     {
+      url: "https://aniketchavan.in/apps",
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
+    {
+      url: "https://aniketchavan.in/apps/claim-decision-engine",
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
+    {
+      url: "https://aniketchavan.in/apps/winterarc",
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
+    {
       url: `${config.site}/blogs`,
       changeFrequency: "weekly",
       priority: 0.7,

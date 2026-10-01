@@ -56,6 +56,13 @@ const Header = ({ loader }: HeaderProps) => {
           </Button>
         </Link>
 
+        <Link
+          href="/apps"
+          className="mr-4 inline-flex items-center rounded-md border border-border px-3 py-1.5 text-sm"
+          style={{ position: "relative", left: "auto", textTransform: "none" }}
+        >
+          Apps
+        </Link>
         <FunnyThemeToggle className="w-6 h-6 mr-4 hidden md:flex" />
         {isHome && process.env.NEXT_PUBLIC_WS_URL && <OnlineUsers />}
         {config.githubUsername && config.githubRepo && (

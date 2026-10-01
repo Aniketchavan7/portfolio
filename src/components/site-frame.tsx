@@ -12,7 +12,7 @@ import AppOverlays from "@/components/app-overlays";
  */
 export default function SiteFrame({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
-  const bare = pathname?.startsWith("/components") ?? false;
+  const bare = pathname === "/apps" || pathname.startsWith("/apps/") || (pathname?.startsWith("/components") ?? false);
 
   if (bare) return <>{children}</>;
 
