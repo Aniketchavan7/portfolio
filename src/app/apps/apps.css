@@ -1,0 +1,233 @@
+.apps-directory {
+  min-height: 100vh;
+  background: hsl(var(--background));
+  color: hsl(var(--foreground));
+  font-weight: 500;
+}
+.apps-directory .apps-container {
+  width: min(1240px, calc(100% - 96px));
+  margin: auto;
+}
+.apps-directory .apps-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 30px 0;
+  border-bottom: 1px solid hsl(var(--border));
+}
+.apps-directory .apps-nav a,
+.apps-directory .apps-footer a {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 12px;
+}
+.apps-directory .apps-nav > span {
+  font-size: 9px;
+  letter-spacing: 0.12em;
+  color: hsl(var(--muted-foreground));
+}
+.apps-directory .apps-intro {
+  padding: 78px 0 64px;
+}
+.apps-directory .apps-eyebrow {
+  display: block;
+  color: hsl(var(--muted-foreground));
+  font-size: 10px;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+}
+.apps-directory h1,
+.apps-directory h2,
+.apps-directory h3 {
+  font-family: var(--font-display), sans-serif;
+  font-weight: 700;
+}
+.apps-directory h1 {
+  font-size: clamp(32px, 5.3vw, 72px);
+  line-height: 1.18;
+  letter-spacing: -0.045em;
+  margin: 26px 0;
+}
+.apps-directory h1 em {
+  font-family: inherit;
+  color: hsl(var(--muted-foreground));
+  font-weight: inherit;
+  font-style: normal;
+}
+.apps-directory .apps-intro p {
+  max-width: 510px;
+  font-size: 16px;
+  line-height: 1.8;
+  color: hsl(var(--muted-foreground));
+}
+.apps-directory .apps-section-label {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  border-top: 1px solid hsl(var(--border));
+  padding: 24px 0;
+}
+.apps-directory .apps-section-label h2 {
+  font-size: 18px;
+  letter-spacing: -0.02em;
+}
+.apps-directory .apps-section-label > span {
+  font-size: 9px;
+  letter-spacing: 0.12em;
+  color: hsl(var(--muted-foreground));
+}
+.apps-directory .apps-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px;
+}
+.apps-directory .directory-card {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border: 1px solid hsl(var(--border));
+  border-radius: var(--radius);
+  background: hsl(var(--card));
+  transition: border-color 180ms ease, transform 180ms ease;
+}
+.apps-directory .directory-card:hover,
+.apps-directory .directory-card:focus-within {
+  border-color: hsl(var(--foreground) / 0.4);
+  transform: translateY(-4px);
+}
+.apps-directory .directory-art {
+  position: relative;
+  min-height: 225px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background: hsl(var(--muted) / 0.45);
+  color: hsl(var(--foreground));
+  border-bottom: 1px solid hsl(var(--border));
+}
+.apps-directory .directory-art > svg {
+  width: 70px;
+  height: 70px;
+}
+.apps-directory .directory-index {
+  position: absolute;
+  top: 22px;
+  left: 24px;
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  opacity: 0.8;
+}
+.apps-directory .directory-art-caption {
+  margin-top: 22px;
+  font-size: 8px;
+  letter-spacing: 0.15em;
+}
+.apps-directory .directory-card-body {
+  padding: 27px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+.apps-directory h3 {
+  font-size: 21px;
+  line-height: 1.4;
+  letter-spacing: -0.035em;
+  margin: 14px 0;
+}
+.apps-directory .directory-card-body p {
+  font-size: 13px;
+  line-height: 1.8;
+  color: hsl(var(--muted-foreground));
+  margin-bottom: 25px;
+}
+.apps-directory .directory-platform {
+  font-size: 10px;
+  color: hsl(var(--muted-foreground));
+  margin-top: auto;
+}
+.apps-directory .directory-action {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  border: 1px solid hsl(var(--primary));
+  border-radius: calc(var(--radius) - 2px);
+  background: hsl(var(--primary));
+  color: hsl(var(--primary-foreground));
+  margin-top: 24px;
+  padding: 12px 14px;
+  font-size: 13px;
+  min-height: 44px;
+}
+.apps-directory .directory-action:hover {
+  background: hsl(var(--primary) / 0.9);
+}
+.apps-directory .apps-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  margin-top: 65px;
+  padding: 27px 0;
+  border-top: 1px solid hsl(var(--border));
+  color: hsl(var(--muted-foreground));
+  font-size: 11px;
+}
+.apps-directory a:focus-visible {
+  outline: 2px solid hsl(var(--ring));
+  outline-offset: 6px;
+}
+@media (max-width: 1000px) {
+  .apps-directory .apps-container {
+    width: calc(100% - 48px);
+  }
+  .apps-directory .apps-grid {
+    gap: 15px;
+  }
+  .apps-directory .directory-card-body {
+    padding: 22px;
+  }
+  .apps-directory h3 {
+    font-size: 19px;
+  }
+}
+@media (max-width: 760px) {
+  .apps-directory .apps-container {
+    width: calc(100% - 40px);
+  }
+  .apps-directory .apps-nav {
+    padding: 24px 0;
+  }
+  .apps-directory .apps-nav > span {
+    font-size: 8px;
+  }
+  .apps-directory .apps-intro {
+    padding: 55px 0 40px;
+  }
+  .apps-directory .apps-intro p {
+    font-size: 14px;
+  }
+  .apps-directory .apps-grid {
+    grid-template-columns: 1fr;
+    gap: 23px;
+  }
+  .apps-directory .directory-art {
+    min-height: 200px;
+  }
+  .apps-directory .directory-card-body {
+    padding: 26px;
+  }
+  .apps-directory h3 {
+    font-size: 23px;
+  }
+  .apps-directory .apps-footer {
+    align-items: flex-start;
+    flex-direction: column;
+    margin-top: 40px;
+    gap: 15px;
+  }
+}

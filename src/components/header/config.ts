@@ -22,6 +22,11 @@ const links: Link[] = [
     thumbnail: '/assets/nav-link-previews/projects.png'
   },
   {
+    title: 'Apps',
+    href: '/apps',
+    thumbnail: '/apps/opengraph-image',
+  },
+  {
     title: 'Blogs',
     href: '/blogs',
     thumbnail: '/assets/nav-link-previews/blog.png',
