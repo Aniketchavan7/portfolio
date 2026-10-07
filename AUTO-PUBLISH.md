@@ -10,7 +10,7 @@ The website already has `/blogs` and `/news`. The daily workflow creates one ori
 4. Ensure repository Actions policies permit this workflow and `contents: write`. Branch protection must allow the bot's content commit; if it prohibits direct pushes, use a narrowly scoped GitHub App integration instead of disabling protections broadly.
 5. GitHub → Actions → Publish daily blog and news → Run workflow. Verify its run and the resulting production deployment in Vercel before relying on the schedule.
 
-Schedule: daily at 03:30 UTC / 09:00 India time. GitHub may delay scheduled jobs; inactive public repositories may have scheduled workflows disabled. Set repository Actions variable `GEMINI_MODEL` to override the existing `gemini-2.5-flash` default if needed for your API account. API usage follows your provider's quota and billing.
+Schedule: daily at 03:30 UTC / 09:00 India time. GitHub may delay scheduled jobs; inactive public repositories may have scheduled workflows disabled. Set repository Actions variable `GEMINI_MODEL` to override the existing `gemini-3.5-flash-lite` default if needed for your API account. API usage follows your provider's quota and billing.
 
 ## How publication works
 
