@@ -123,6 +123,9 @@ export type Project = {
   id: string;
   category: string;
   title: string;
+  summary: string;
+  contribution: string;
+  preview?: { src: string; caption: string };
   src: string;
   screenshots: string[];
   skills: { frontend: Skill[]; backend: Skill[] };
@@ -136,6 +139,9 @@ const projects: Project[] = [
     id: "spring-money",
     category: "Gen AI / Industry",
     title: "Spring Money — Multi-Agent System",
+    summary: "Automates the research, drafting, and review stages of a financial-content workflow.",
+    contribution: "Built Python agent orchestration, retrieval pipelines, and backend APIs.",
+    preview: { src: "/assets/projects-screenshots/live/spring-money.png", caption: "Company website · contribution: backend AI workflows" },
     src: "/assets/projects-screenshots/spring-money.png",
     screenshots: [],
     skills: {
@@ -175,6 +181,9 @@ const projects: Project[] = [
     id: "duramet-tech",
     category: "Client Project",
     title: "Duramet Technologies",
+    summary: "Helps industrial customers explore products and send equipment inquiries.",
+    contribution: "Designed, developed, and deployed the responsive website and inquiry flows.",
+    preview: { src: "/assets/projects-screenshots/live/duramet.png", caption: "Live client website" },
     src: "/assets/projects-screenshots/duramet-tech.png",
     screenshots: [],
     skills: {
@@ -213,6 +222,9 @@ const projects: Project[] = [
     id: "rangoli-website",
     category: "Client Project",
     title: "Akanksha Creations — Rangoli Platform",
+    summary: "Brings an art-class business online with galleries, course information, and enrollment inquiries.",
+    contribution: "Built the responsive gallery and class pages, and deployed the website on Netlify.",
+    preview: { src: "/assets/projects-screenshots/live/akanksha.png", caption: "Live client website" },
     src: "/assets/projects-screenshots/rangoli-website.png",
     screenshots: [],
     skills: {
@@ -251,6 +263,8 @@ const projects: Project[] = [
     id: "aspire-ai",
     category: "AI Chatbot",
     title: "Aspire AI — Career Guidance Chatbot",
+    summary: "Answers career questions through a conversational interface with personalized recommendations.",
+    contribution: "Built the Flask backend, LLM response handling, and conversational state management.",
     src: "/assets/projects-screenshots/aspire-ai.png",
     screenshots: [],
     skills: {
@@ -294,6 +308,8 @@ const projects: Project[] = [
     id: "fno-trading-bot",
     category: "Trading Automation",
     title: "Automated F&O Trading Strategy Bot",
+    summary: "Turns EMA and RSI indicator rules into automated trading signals with stop-loss logic.",
+    contribution: "Implemented indicator processing, signal generation, and risk rules in Python.",
     src: "/assets/projects-screenshots/fno-trading-bot.png",
     screenshots: [],
     skills: {
@@ -334,6 +350,8 @@ const projects: Project[] = [
     id: "ds-library",
     category: "C++ Library",
     title: "Generic Data Structures Library",
+    summary: "Provides reusable linked lists, stacks, and queues that work across data types.",
+    contribution: "Implemented generic C++ templates with encapsulated, modular data structures.",
     src: "/assets/projects-screenshots/ds-library.png",
     screenshots: [],
     skills: {

@@ -14,22 +14,22 @@ import SectionWrapper from "../ui/section-wrapper";
 
 const ContactSection = () => {
   return (
-    <SectionWrapper id="contact" className="min-h-screen max-w-7xl mx-auto ">
+    <SectionWrapper id="contact" className="max-w-7xl mx-auto py-12 md:py-20">
       <SectionHeader id='contact' className="relative mb-14" title={
         <>
           LET&apos;S WORK <br />
           TOGETHER
         </>} />
       <div className="grid grid-cols-1 md:grid-cols-2 z-[9999] mx-4">
-        <Card className="min-w-7xl bg-white/70 dark:bg-black/70 backdrop-blur-sm rounded-xl mt-10 md:mt-20">
+        <Card className="bg-card rounded-xl">
           <CardHeader>
-            <CardTitle className="text-4xl">Contact Form</CardTitle>
+            <CardTitle className="text-2xl md:text-3xl">Contact Form</CardTitle>
             <CardDescription>
               Please contact me directly at{" "}
               <a
                 target="_blank"
                 href={`mailto:${config.email}`}
-                className="text-gray-200 cursor-can-hover rounded-lg"
+                className="text-foreground underline underline-offset-4 cursor-can-hover rounded-lg"
               >
                 {config.email.replace(/@/g, "(at)")}
               </a>{" "}

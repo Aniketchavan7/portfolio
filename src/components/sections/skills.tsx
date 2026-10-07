@@ -24,7 +24,7 @@ const SkillsSection = () => {
     return (
       <SectionWrapper
         id="skills"
-        className="flex w-full min-h-screen flex-col justify-center py-24"
+        className="flex w-full flex-col justify-center py-12 md:py-20"
       >
         <SectionHeader
           id="skills"
@@ -80,9 +80,9 @@ const SkillsSection = () => {
   return (
     <SectionWrapper
       id="skills"
-      className="w-full min-h-screen flex flex-col justify-center py-20"
+      className="w-full flex flex-col justify-center py-12 md:py-20"
     >
-      <SectionHeader id="skills" title="Tech Stack" desc="(hint: press a key)" />
+      <SectionHeader id="skills" title="Tech Stack" desc="Explore the keyboard, or browse the tools below." className="mb-12 md:mb-48" />
 
       <ul className="mx-auto grid w-full max-w-5xl grid-cols-2 gap-3 px-4 sm:grid-cols-3 sm:gap-4 md:grid-cols-4 lg:grid-cols-5 mt-12 pointer-events-auto">
         {Object.values(SKILLS).map((skill) => (

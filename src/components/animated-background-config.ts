@@ -9,7 +9,7 @@ export const STATES = {
     },
     mobile: {
       scale: { x: 0.30, y: 0.30, z: 0.30 },
-      position: { x: 0, y: -200, z: 0 },
+      position: { x: 0, y: -310, z: 0 },
       rotation: { x: 0, y: 0, z: 0 },
     },
   },
@@ -132,11 +132,11 @@ export const getKeyboardState = ({
     const MOBILE_REF_WIDTH = 390;
 
     const targetScale = isMobile
-      ? width / MOBILE_REF_WIDTH
+      ? (width / MOBILE_REF_WIDTH) * 0.6
       : width / DESKTOP_REF_WIDTH;
 
     // Clamp values to prevent extremes
-    const minScale = isMobile ? 0.5 : 0.5;
+    const minScale = isMobile ? 0.35 : 0.5;
     const maxScale = isMobile ? 0.6 : 1.15;
 
     return Math.min(Math.max(targetScale, minScale), maxScale);

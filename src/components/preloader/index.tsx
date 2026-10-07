@@ -41,8 +41,8 @@ export const usePreloader = () => {
 const LOADING_TIME = 2.5;
 function Preloader({ children, disabled = false }: PreloaderProps) {
   const pathname = usePathname();
-  // Skip the loading splash for the résumé route (and anywhere it's disabled).
-  const skip = disabled || pathname?.startsWith("/resume");
+  // The homepage is readable immediately; the keyboard loads progressively.
+  const skip = disabled || pathname === "/" || pathname?.startsWith("/resume");
 
   const [isLoading, setIsLoading] = useState(!skip);
   const [loadingPercent, setLoadingPercent] = useState(skip ? 100 : 0);
@@ -85,9 +85,9 @@ function Preloader({ children, disabled = false }: PreloaderProps) {
 
   return (
     <preloaderContext.Provider
-      value={{ isLoading, bypassLoading, loadingPercent }}
+      value={{ isLoading: !skip && isLoading, bypassLoading, loadingPercent }}
     >
-      <AnimatePresence mode="wait">{isLoading && <Loader />}</AnimatePresence>
+      <AnimatePresence mode="wait">{!skip && isLoading && <Loader />}</AnimatePresence>
       {children}
     </preloaderContext.Provider>
   );

@@ -1,161 +1,32 @@
-import { cn } from "@/lib/utils";
 import Link from "next/link";
-import React from "react";
-import { Button } from "../ui/button";
-import { Code2, File, Github, Linkedin } from "lucide-react";
-import {
-  Tooltip,
-  TooltipContent,
-  TooltipTrigger,
-} from "@/components/ui/tooltip";
-import { usePreloader } from "../preloader";
-import { BlurIn, BoxReveal } from "../reveal-animations";
-import ScrollDownIcon from "../scroll-down-icon";
-import { SiGithub, SiLinkedin } from "react-icons/si";
+import { ArrowRight, File } from "lucide-react";
+import { buttonVariants } from "../ui/button";
 import { config } from "@/data/config";
+import { cn } from "@/lib/utils";
 
-import SectionWrapper from "../ui/section-wrapper";
-
-const HeroSection = () => {
-  const { isLoading } = usePreloader();
-
+export default function HeroSection() {
   return (
-    <SectionWrapper id="hero" className={cn("relative w-full h-screen")}>
-      <div className="grid md:grid-cols-2">
-        <div
-          className={cn(
-            "h-[calc(100dvh-3rem)] md:h-[calc(100dvh-4rem)] z-[2]",
-            "col-span-1",
-            "flex flex-col justify-start md:justify-center items-center md:items-start",
-            "pt-28 sm:pb-16 md:p-20 lg:p-24 xl:p-28"
-          )}
-        >
-          {!isLoading && (
-            <div className="flex flex-col">
-              <div>
-                <BlurIn delay={0.7}>
-                  <p
-                    className={cn(
-                      "md:self-start mt-4 font-medium text-md text-slate-500 dark:text-zinc-400",
-                      "cursor-default sm:text-xl md:text-xl whitespace-nowrap bg-clip-text "
-                    )}
-                  >
-                    Hi, I am
-                    <br className="md:hidden" />
-                  </p>
-                </BlurIn>
-
-                <BlurIn delay={1}>
-                  <Tooltip delayDuration={300}>
-                    <TooltipTrigger asChild>
-                      <h1
-                        className={cn(
-                          "-ml-[6px] leading-none text-transparent text-slate-800 text-left",
-                          "font-bold text-7xl md:text-7xl lg:text-8xl xl:text-9xl",
-                          "cursor-default text-edge-outline font-display "
-                        )}
-                      >
-                        {config.author.split(" ")[0]}
-                        <br className="md:block hiidden" />
-                        {config.author.split(" ")[1]}
-                      </h1>
-                    </TooltipTrigger>
-                    <TooltipContent
-                      side="top"
-                      className="dark:bg-white dark:text-black"
-                    >
-                      theres something waiting for you in devtools
-                    </TooltipContent>
-                  </Tooltip>
-                </BlurIn>
-                <BlurIn delay={1.2}>
-                  <p
-                    className={cn(
-                      "md:self-start md:mt-4 font-medium text-md text-slate-500 dark:text-zinc-400",
-                      "cursor-default sm:text-xl md:text-xl whitespace-nowrap bg-clip-text "
-                    )}
-                  >
-                    Software Developer | AI &amp; Data Science
-                  </p>
-                </BlurIn>
-              </div>
-              <div className="mt-8 flex flex-col gap-3 w-fit">
-                <Link
-                  href={"/Aniket_Chavan_Resume.pdf"}
-                  target="_blank"
-                  className="flex-1"
-                >
-                  <BoxReveal delay={2} width="100%" >
-                    <Button className="flex items-center gap-2 w-full">
-                      <File size={24} />
-                      <p>Resume</p>
-                    </Button>
-                  </BoxReveal>
-                </Link>
-                <div className="md:self-start flex gap-3">
-                  <Tooltip delayDuration={300}>
-                    <TooltipTrigger asChild>
-                      <Link href={"#contact"}>
-                        <Button
-                          variant={"outline"}
-                          className="block w-full overflow-hidden"
-                        >
-                          Hire Me
-                        </Button>
-                      </Link>
-                    </TooltipTrigger>
-                    <TooltipContent side="bottom">
-                      <p>Let&apos;s connect! 🚀</p>
-                    </TooltipContent>
-                  </Tooltip>
-                  <div className="flex items-center h-full gap-2">
-                    <Link
-                      href={config.social.github}
-                      target="_blank"
-                      className="cursor-can-hover"
-                    >
-                      <Button variant={"outline"}>
-                        <SiGithub size={24} />
-                      </Button>
-                    </Link>
-                    <Link
-                      href={config.social.linkedin}
-                      target="_blank"
-                      className="cursor-can-hover"
-                    >
-                      <Button variant={"outline"}>
-                        <SiLinkedin size={24} />
-                      </Button>
-                    </Link>
-                    <Tooltip delayDuration={300}>
-                      <TooltipTrigger asChild>
-                        <Link
-                          href={config.social.codolio}
-                          target="_blank"
-                          className="cursor-can-hover"
-                        >
-                          <Button variant={"outline"}>
-                            <Code2 size={24} />
-                          </Button>
-                        </Link>
-                      </TooltipTrigger>
-                      <TooltipContent side="bottom">
-                        <p>Codolio CP Profile ⚡</p>
-                      </TooltipContent>
-                    </Tooltip>
-                  </div>
-                </div>
-              </div>
-            </div>
-          )}
+    <section id="hero" className="home-hero" aria-labelledby="hero-name">
+      <div className="home-hero-copy">
+        <p className="home-role">Software Developer · AI &amp; Data Science</p>
+        <h1 id="hero-name">Aniket<br />Chavan<span>.</span></h1>
+        <p className="home-introduction">I build web apps and AI tools that solve everyday problems.</p>
+        <div className="home-hero-actions">
+          <Link href="/apps" className={cn(buttonVariants({ size: "lg" }), "gap-2")}>
+            Explore Apps <ArrowRight size={18} aria-hidden="true" />
+          </Link>
+          <Link href="/Aniket_Chavan_Resume.pdf" target="_blank" rel="noopener noreferrer"
+            className={cn(buttonVariants({ variant: "outline", size: "lg" }), "gap-2")}>
+            <File size={18} aria-hidden="true" /> Resume<span className="sr-only"> (PDF, opens in a new tab)</span>
+          </Link>
         </div>
-        <div className="grid col-span-1"></div>
+        <nav className="home-social-links" aria-label="Contact and profiles">
+          <Link href="#contact">Hire Me</Link>
+          <a href={config.social.github} target="_blank" rel="noopener noreferrer">GitHub<span className="sr-only"> (opens in a new tab)</span></a>
+          <a href={config.social.linkedin} target="_blank" rel="noopener noreferrer">LinkedIn<span className="sr-only"> (opens in a new tab)</span></a>
+          <a href={config.social.codolio} target="_blank" rel="noopener noreferrer">Codolio<span className="sr-only"> (opens in a new tab)</span></a>
+        </nav>
       </div>
-      <div className="absolute bottom-10 left-[50%] translate-x-[-50%]">
-        <ScrollDownIcon />
-      </div>
-    </SectionWrapper>
+    </section>
   );
-};
-
-export default HeroSection;
+}
