@@ -70,7 +70,12 @@ async function generate(text) {
       : message.includes('permission') ? 'Google denied API/model access; check key restrictions and project permissions.'
       : message.includes('api key') ? 'Google rejected the API key; check the GitHub secret.'
       : 'Check API access, selected model and quota in Google AI Studio.';
-    throw new Error(`Gemini HTTP ${response.status}: ${reason}`);
+    const detail = String(failure.error?.message ?? 'No provider detail returned')
+      .split(key).join('[REDACTED]')
+      .replace(/(?:AQ\.|AIza)[A-Za-z0-9_.-]+/g, '[REDACTED]')
+      .replace(/https?:\/\/\S+/g, '[provider URL]')
+      .replace(/[\r\n]/g, ' ').slice(0, 600);
+    throw new Error(`Gemini HTTP ${response.status}: ${reason} Provider detail: ${detail}`);
   }
   const data = await response.json();
   const candidate = data.candidates?.[0];
