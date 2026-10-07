@@ -61,7 +61,17 @@ async function generate(text) {
     body: JSON.stringify({ contents: [{ parts: [{ text }] }], generationConfig: { responseMimeType: 'application/json', temperature: 0.4 } }),
     signal: AbortSignal.timeout(180000),
   });
-  if (!response.ok) throw new Error(`Gemini HTTP ${response.status}; check API key, model and quota.`);
+  if (!response.ok) {
+    const failure = await response.json().catch(() => ({}));
+    const message = String(failure.error?.message ?? '').toLowerCase();
+    const reason = message.includes('leaked') ? 'Google reports this key as leaked; replace the GitHub secret with a new key.'
+      : message.includes('disabled') ? 'Gemini API or project access is disabled; check the Google project.'
+      : message.includes('billing') ? 'Google requires billing configuration for this request.'
+      : message.includes('permission') ? 'Google denied API/model access; check key restrictions and project permissions.'
+      : message.includes('api key') ? 'Google rejected the API key; check the GitHub secret.'
+      : 'Check API access, selected model and quota in Google AI Studio.';
+    throw new Error(`Gemini HTTP ${response.status}: ${reason}`);
+  }
   const data = await response.json();
   const candidate = data.candidates?.[0];
   if (candidate?.finishReason !== 'STOP') throw new Error('Incomplete Gemini response');
