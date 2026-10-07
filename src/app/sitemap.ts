@@ -35,7 +35,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     {
       url: `${config.site}/blogs`,
-      changeFrequency: "weekly",
+      changeFrequency: "daily",
       priority: 0.7,
     },
     {
@@ -43,6 +43,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "monthly",
       priority: 0.8,
     },
+    { url: `${config.site}/news`, changeFrequency: "daily", priority: 0.7 },
     ...posts,
   ];
 }

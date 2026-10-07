@@ -1,0 +1,60 @@
+name: Publish daily blog and news
+on:
+  schedule:
+    - cron: '30 3 * * *' # 09:00 Asia/Kolkata; GitHub may delay scheduled runs
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: daily-editorial
+  cancel-in-progress: false
+jobs:
+  publish:
+    if: github.ref_name == github.event.repository.default_branch
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.repository.default_branch }}
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+      - name: Check required configuration
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          VERCEL_DEPLOY_HOOK: ${{ secrets.VERCEL_DEPLOY_HOOK }}
+        run: |
+          test -n "$GEMINI_API_KEY" || { echo 'Add GEMINI_API_KEY to repository Actions secrets.'; exit 1; }
+          test -n "$VERCEL_DEPLOY_HOOK" || { echo 'Add VERCEL_DEPLOY_HOOK for the production branch.'; exit 1; }
+      - run: npm ci --legacy-peer-deps
+      - run: npm run test:content
+      - name: Generate and review edition
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          GEMINI_MODEL: ${{ vars.GEMINI_MODEL }}
+        run: npm run content:publish
+      - name: Check production build
+        env:
+          RESEND_API_KEY: re_build_only_placeholder
+        run: npm run build
+      - name: Commit content only
+        id: content
+        run: |
+          git add -- src/content/blogs src/content/news
+          if git diff --cached --quiet; then
+            echo 'changed=false' >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git commit -m 'content: publish daily blog and news'
+          git push origin "HEAD:${{ github.event.repository.default_branch }}"
+          echo 'changed=true' >> "$GITHUB_OUTPUT"
+      # Also run on a retry with an existing edition, to recover a failed deploy request.
+      - name: Request Vercel deployment
+        env:
+          VERCEL_DEPLOY_HOOK: ${{ secrets.VERCEL_DEPLOY_HOOK }}
+        run: node scripts/deploy-content.mjs
+

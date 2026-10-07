@@ -6,7 +6,10 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "content:publish": "node scripts/publish-daily.mjs",
+    "content:sources": "node scripts/publish-daily.mjs --check-sources",
+    "test:content": "node --test scripts/content-core.test.mjs"
   },
   "dependencies": {
     "@gsap/react": "^2.1.1",
@@ -30,6 +33,7 @@
     "date-fns": "^4.1.0",
     "devtools-detector": "^2.0.22",
     "embla-carousel-react": "^8.1.8",
+    "fast-xml-parser": "^5.11.2",
     "gray-matter": "^4.0.3",
     "gsap": "^3.12.5",
     "lenis": "^1.1.6",
