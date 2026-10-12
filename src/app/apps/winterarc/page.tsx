@@ -9,39 +9,39 @@ import {
   Smartphone,
   Target,
   CalendarDays,
-  MessageCircle,
-  ChartNoAxesCombined,
+  Clock3,
+  Grid3X3,
 } from "lucide-react";
 import { winterArc } from "@/data/apps";
 import { ArcMark } from "@/components/apps/arc-mark";
 import { WinterPreview } from "@/components/apps/winter-preview";
 
 export const metadata = appMetadata(
-  "Winter Arc — Build a daily practice | Aniket Chavan",
-  "Turn your goal into a daily plan with Winter Arc. Track commitments, get AI-assisted coaching, and reflect on your progress. Open on the web or download for Android.",
+  "Winter Arc — Daily Tasks & Must Do | Aniket Chavan",
+  "Build a timed daily roadmap, finish Must Do routines and goals on time, and grow a clear contribution history. Open Winter Arc on the web or download it for Android.",
   "/apps/winterarc",
 );
 
 const features = [
   {
     icon: Target,
-    title: "Your ambition. A real plan.",
-    text: "Choose a goal and target date. Build a plan around your routine, energy, and the time you actually have.",
+    title: "Your day, built by you.",
+    text: "Create one-time, daily, or weekday tasks yourself. Add notes, choose the start time, and set the deadline.",
+  },
+  {
+    icon: Clock3,
+    title: "Time windows that matter.",
+    text: "A task stays locked until its start time. Finish inside the window for an on-time result, or complete it late without rewriting the record.",
   },
   {
     icon: CalendarDays,
-    title: "A little structure. A lot of clarity.",
-    text: "Turn the big picture into a daily schedule. Check off commitments, earn XP, and build consistency through challenges.",
+    title: "Routines become Must Do.",
+    text: "Track a daily routine or a specific goal such as LeetCode Daily directly from the same roadmap—on desktop, mobile, or keyboard.",
   },
   {
-    icon: MessageCircle,
-    title: "Room for reflection.",
-    text: "Talk with an AI coach about your plan and close the day with a reflection. Make tomorrow a little more intentional.",
-  },
-  {
-    icon: ChartNoAxesCombined,
-    title: "Small steps. Visible progress.",
-    text: "Review your journal, challenge streaks, and progress history. Export your journal when you want to keep a copy.",
+    icon: Grid3X3,
+    title: "One promise. One clear record.",
+    text: "See your overall daily contribution and a separate binary heatmap for every tracked routine. Only an on-time finish fills the block.",
   },
 ];
 
@@ -62,16 +62,16 @@ export default function WinterArcPage() {
           <ArcMark />
           <span>WINTER ARC</span>
         </div>
-        <span className="eyebrow">A PRACTICE. A LITTLE, EVERY DAY.</span>
+        <span className="eyebrow">SCHEDULE · COMPLETE · CONTRIBUTE</span>
         <h1>
-          Keep a promise.
+          Plan the day.
           <br />
-          <em>Change your everyday.</em>
+          <em>Keep the promise.</em>
         </h1>
         <p>
-          Your goals deserve more than a someday.
-          <br className="desktop-break" /> Meet the daily discipline app that
-          helps you show up for them.
+          Build a roadmap with real time windows.
+          <br className="desktop-break" /> Finish what matters on time and keep
+          the evidence.
         </p>
         <div className="product-actions">
           <a className="studio-button button-terra" href="#download">
@@ -110,20 +110,20 @@ export default function WinterArcPage() {
           <em>Just the next right thing.</em>
         </h2>
         <p>
-          A long-term goal can feel far away. Winter Arc brings it closer with a
-          plan for today, a space to reflect, and a record of every small step.
+          Winter Arc gives every routine and goal a place in today&apos;s schedule,
+          then records whether you kept the promise while it still counted.
         </p>
       </section>
       <section className="studio-container section-space">
         <div className="section-heading">
           <div>
             <span className="eyebrow">
-              THE PLAN. THE PRACTICE. THE PROGRESS.
+              THE ROADMAP. THE WINDOW. THE RECORD.
             </span>
             <h2>
-              Find your
+              Build your
               <br />
-              <em>daily rhythm.</em>
+              <em>daily system.</em>
             </h2>
           </div>
         </div>
@@ -143,7 +143,7 @@ export default function WinterArcPage() {
       <section className="how-section">
         <div className="studio-container how-grid">
           <div>
-            <span className="eyebrow">FROM INTENTION TO ACTION</span>
+            <span className="eyebrow">FROM PLAN TO PROOF</span>
             <h2>
               Your first day,
               <br />
@@ -154,30 +154,30 @@ export default function WinterArcPage() {
             <li>
               <span>01</span>
               <div>
-                <h3>Choose your direction.</h3>
+                <h3>Create your roadmap.</h3>
                 <p>
-                  Create an account. Set a goal and tell Winter Arc about your
-                  routine and available time.
+                  Add each task manually, choose when it becomes available, and
+                  set the deadline that makes it count.
                 </p>
               </div>
             </li>
             <li>
               <span>02</span>
               <div>
-                <h3>Make a realistic plan.</h3>
+                <h3>Choose what is Must Do.</h3>
                 <p>
-                  Build a personalized schedule with AI assistance, or begin
-                  with the built-in starter plan.
+                  Track a daily routine or specific goal from the same task.
+                  There is no second checklist to maintain.
                 </p>
               </div>
             </li>
             <li>
               <span>03</span>
               <div>
-                <h3>Show up for today.</h3>
+                <h3>Finish inside the window.</h3>
                 <p>
-                  Complete a task, check in on a challenge, and reflect. Return
-                  tomorrow with a little more clarity.
+                  On-time work fills the overall contribution grid and that
+                  task&apos;s own heatmap. Late work stays honestly late.
                 </p>
               </div>
             </li>
@@ -208,7 +208,7 @@ export default function WinterArcPage() {
               Download for Android <Download size={17} />
             </a>
             <span className="download-meta">
-              APK · v{winterArc.version} · Android 5.0+
+              APK · v{winterArc.version} · Android 7.0+
             </span>
             <details>
               <summary>How to install the APK</summary>
@@ -261,10 +261,8 @@ export default function WinterArcPage() {
           <details>
             <summary>Does my progress sync between devices?</summary>
             <p>
-              Your daily tasks, journal, XP, and challenge history stay in this
-              browser or on this device, separately for each account. They do
-              not sync between devices. Export your journal from the Progress
-              screen before clearing browser data.
+              Yes. Daily Tasks, completion results, Must Do periods, and
+              contribution history sync securely through your account.
             </p>
           </details>
           <details>
@@ -278,15 +276,15 @@ export default function WinterArcPage() {
             <summary>Do I need an account?</summary>
             <p>
               Yes. Sign up with your email and complete the confirmation step to
-              set up your goal and daily plan.
+              open your private roadmap and sync it between devices.
             </p>
           </details>
           <details>
-            <summary>What if AI planning is unavailable?</summary>
+            <summary>What happens if I miss a deadline?</summary>
             <p>
-              You can begin with the built-in starter schedule and manage your
-              daily tasks. AI-assisted features need a working internet
-              connection and provider availability.
+              You can still complete the task until that daily occurrence
+              closes. It is permanently recorded as late and does not fill the
+              Must Do contribution block.
             </p>
           </details>
         </div>

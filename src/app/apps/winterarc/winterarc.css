@@ -43,7 +43,7 @@
 .winter-page a:focus-visible,
 .winter-page button:focus-visible,
 .winter-page summary:focus-visible {
-  outline: 3px solid #8d9fff;
+  outline: 3px solid #58a6ff;
   outline-offset: 6px;
 }
 .winter-page a {
@@ -53,8 +53,8 @@
     transform 0.2s;
 }
 .winter-page ::selection {
-  background: #dce1fd;
-  color: #20221f;
+  background: #1f6feb;
+  color: #f0f6fc;
 }
 .winter-page .eyebrow {
   font:
@@ -72,7 +72,7 @@
   width: 6px;
   height: 6px;
   border-radius: 50%;
-  background: #6b8367;
+  background: #3fb950;
   flex: 0 0 auto;
 }
 .winter-page .section-space {
@@ -116,22 +116,22 @@
   border: 1px solid currentColor;
 }
 .winter-page .button-terra {
-  color: #171816;
-  background: #d98771;
+  color: #f0f6fc;
+  background: #238636;
 }
 .winter-page .winter-preview {
   width: 100%;
-  background: #1d1e1b;
-  border: 1px solid #42453c;
+  background: #161b22;
+  border: 1px solid #30363d;
   border-radius: 10px;
-  color: #edece5;
-  box-shadow: 0 16px 30px #11130f22;
+  color: #f0f6fc;
+  box-shadow: 0 16px 30px #01040922;
   text-align: left;
   overflow: hidden;
 }
 .winter-page .preview-top {
   padding: 17px 22px;
-  border-bottom: 1px solid #373a32;
+  border-bottom: 1px solid #30363d;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -147,12 +147,12 @@
 .winter-page .preview-top svg {
   width: 23px;
   height: 23px;
-  color: #d98771;
+  color: #3fb950;
 }
 .winter-page .preview-caption {
   font-size: 7px;
   letter-spacing: 0.13em;
-  color: #b3b6a9;
+  color: #8b949e;
 }
 .winter-page .preview-body {
   padding: 27px 25px 16px;
@@ -163,7 +163,7 @@
   gap: 7px;
   font-size: 8px;
   letter-spacing: 0.12em;
-  color: #b3b6a9;
+  color: #8b949e;
 }
 .winter-page .winter-preview h3 {
   font-size: 32px;
@@ -172,25 +172,25 @@
   letter-spacing: -0.045em;
 }
 .winter-page .winter-preview h3 em {
-  color: #d98771;
+  color: #3fb950;
 }
 .winter-page .preview-intro {
   font-size: 10px;
-  color: #b3b6a9;
+  color: #8b949e;
 }
 .winter-page .preview-metrics {
   display: flex;
   gap: 30px;
   margin: 24px 0;
   padding-block: 16px;
-  border-top: 1px solid #373a32;
-  border-bottom: 1px solid #373a32;
+  border-top: 1px solid #30363d;
+  border-bottom: 1px solid #30363d;
 }
 .winter-page .preview-metrics > div > span {
   display: block;
   font-size: 7px;
   letter-spacing: 0.1em;
-  color: #b3b6a9;
+  color: #8b949e;
 }
 .winter-page .preview-metrics strong {
   display: block;
@@ -200,11 +200,11 @@
 }
 .winter-page .preview-metrics small {
   font-size: 10px;
-  color: #b3b6a9;
+  color: #8b949e;
 }
 .winter-page .preview-arc {
   margin-left: auto;
-  color: #d98771;
+  color: #3fb950;
   align-self: center;
 }
 .winter-page .preview-list-heading {
@@ -218,17 +218,17 @@
   gap: 7px;
 }
 .winter-page .preview-list-heading svg {
-  color: #d98771;
+  color: #3fb950;
 }
 .winter-page .preview-progress {
   height: 2px;
-  background: #373a32;
+  background: #30363d;
   margin: 14px 0 4px;
 }
 .winter-page .preview-progress > span {
   display: block;
   height: 2px;
-  background: #99b394;
+  background: #238636;
   transition: width 0.3s;
 }
 .winter-page .task-checkbox {
@@ -237,7 +237,7 @@
   place-items: center;
   width: 19px;
   height: 19px;
-  border: 1px solid #74796a;
+  border: 1px solid #484f58;
   border-radius: 50%;
 }
 .winter-page button.task-checkbox {
@@ -248,17 +248,83 @@
   height: 32px;
 }
 .winter-page .is-done .task-checkbox {
-  background: #99b394;
-  color: #1d1e1b;
-  border-color: #99b394;
+  background: #238636;
+  color: #f0f6fc;
+  border-color: #3fb950;
 }
 .winter-page .is-done > div > span {
-  color: #b3b6a9;
+  color: #8b949e;
   text-decoration: line-through;
 }
 .winter-page .task-xp {
+  padding: 3px 6px;
+  border: 1px solid #30363d;
+  border-radius: 3px;
   font-size: 8px;
-  color: #b3b6a9;
+  color: #8b949e;
+}
+.winter-page .preview-tasks {
+  border-top: 1px solid #30363d;
+}
+.winter-page .preview-task {
+  display: grid;
+  grid-template-columns: 42px 32px minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 11px;
+  min-height: 55px;
+  border-bottom: 1px solid #30363d;
+}
+.winter-page .preview-task time {
+  color: #8b949e;
+  font: 8px ui-monospace, SFMono-Regular, Consolas, monospace;
+}
+.winter-page .preview-task > div {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  font-size: 10px;
+}
+.winter-page .preview-task > div small {
+  margin-top: 3px;
+  color: #8b949e;
+  font: 8px ui-monospace, SFMono-Regular, Consolas, monospace;
+}
+.winter-page .preview-goal-history {
+  margin-top: 18px;
+  padding: 14px;
+  border: 1px solid #30363d;
+  border-radius: 6px;
+  background: #0d1117;
+}
+.winter-page .preview-goal-history > div:first-child {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  color: #c9d1d9;
+  font-size: 8px;
+  letter-spacing: 0.08em;
+}
+.winter-page .preview-goal-history small {
+  color: #8b949e;
+  font-size: 8px;
+  letter-spacing: 0;
+}
+.winter-page .preview-heatmap {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 5px;
+  margin-top: 10px;
+}
+.winter-page .preview-heatmap i {
+  height: 12px;
+  border: 1px solid #30363d;
+  border-radius: 3px;
+  background: transparent;
+}
+.winter-page .preview-heatmap i.is-complete {
+  border-color: #3fb950;
+  background: #238636;
 }
 .winter-page .preview-bottom {
   display: flex;
@@ -267,23 +333,23 @@
   gap: 10px;
   padding-top: 18px;
   font-size: 8px;
-  color: #b3b6a9;
+  color: #8b949e;
 }
 .winter-page .preview-demo-label {
   font-size: 8px;
   letter-spacing: 0.01em;
   text-align: center;
   padding: 10px 15px;
-  border-top: 1px solid #373a32;
-  color: #b3b6a9;
-  background: #171816;
+  border-top: 1px solid #30363d;
+  color: #8b949e;
+  background: #0d1117;
 }
 .winter-page .product-subnav {
   display: flex;
   justify-content: space-between;
   align-items: center;
   height: 70px;
-  border-bottom: 1px solid #363930;
+  border-bottom: 1px solid #30363d;
   font-size: 12px;
 }
 .winter-page .product-subnav > span,
@@ -297,18 +363,18 @@
   height: 22px;
 }
 .winter-page {
-  --ink: #eeeee5;
-  --subtle: #b3b6a9;
-  --rule: #393b33;
-  --blue: #d98771;
-  background: #171816;
+  --ink: #f0f6fc;
+  --subtle: #8b949e;
+  --rule: #30363d;
+  --blue: #3fb950;
+  background: #0d1117;
   color: var(--ink);
 }
 .winter-page .eyebrow {
-  color: #b3b6a9;
+  color: #8b949e;
 }
 .winter-page em {
-  color: #d98771;
+  color: #3fb950;
 }
 .winter-page .winter-hero {
   text-align: center;
@@ -324,7 +390,7 @@
   font-size: 13px;
 }
 .winter-page .winter-brand svg {
-  color: #d98771;
+  color: #3fb950;
 }
 .winter-page .winter-hero h1 {
   font-size: clamp(47px, 6.6vw, 90px);
@@ -371,7 +437,7 @@
 .winter-page .showcase-side {
   font-size: 8px;
   letter-spacing: 0.2em;
-  color: #b3b6a9;
+  color: #8b949e;
   text-align: left;
   line-height: 2;
   max-width: 120px;
@@ -398,8 +464,8 @@
 }
 .winter-page .product-features article {
   padding: 38px;
-  background: #22241f;
-  border: 1px solid #35382f;
+  background: #161b22;
+  border: 1px solid #30363d;
   border-radius: 12px;
 }
 .winter-page .feature-icon {
@@ -407,7 +473,7 @@
   justify-content: space-between;
   align-items: center;
   margin-bottom: 42px;
-  color: #d98771;
+  color: #3fb950;
 }
 .winter-page .feature-icon span {
   font-size: 10px;
@@ -442,7 +508,7 @@
   padding: 25px 0;
 }
 .winter-page .steps li > span {
-  color: #d98771;
+  color: #3fb950;
   font-size: 13px;
 }
 .winter-page .steps h3 {
@@ -458,7 +524,7 @@
 }
 .winter-page .download-section > svg {
   margin: 0 auto 25px;
-  color: #d98771;
+  color: #3fb950;
   width: 55px;
   height: 55px;
 }
