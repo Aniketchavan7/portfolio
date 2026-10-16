@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowRight, ArrowUpRight, Building2, FileCheck2 } from "lucide-react";
+import { ArrowRight, ArrowUpRight, Building2, FileCheck2, Headphones } from "lucide-react";
 import { apps } from "@/data/apps";
 import { ArcMark } from "../apps/arc-mark";
 
@@ -13,7 +13,7 @@ export default function AppsShowcase() {
           <Link key={app.slug} href={app.href} className="home-app-row"
             {...(app.external ? { target: "_blank", rel: "noopener noreferrer" } : {})}>
             <span className="home-app-icon" aria-hidden="true">
-              {app.slug === "winterarc" ? <ArcMark /> : app.slug === "rentalgo" ? <Building2 /> : <FileCheck2 />}
+              {app.slug === "nospoti" ? <Headphones /> : app.slug === "winterarc" ? <ArcMark /> : app.slug === "rentalgo" ? <Building2 /> : <FileCheck2 />}
             </span>
             <div className="home-app-summary">
               <h3>{app.name}</h3>

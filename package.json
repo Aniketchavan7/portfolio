@@ -9,7 +9,9 @@
     "lint": "next lint",
     "content:publish": "node scripts/publish-daily.mjs",
     "content:sources": "node scripts/publish-daily.mjs --check-sources",
-    "test:content": "node --test scripts/content-core.test.mjs"
+    "test:content": "node --test scripts/content-core.test.mjs",
+    "landing:nospoti": "node scripts/generate-nospoti-landing.mjs",
+    "prebuild": "npm run landing:nospoti"
   },
   "dependencies": {
     "@gsap/react": "^2.1.1",

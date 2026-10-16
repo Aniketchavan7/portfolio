@@ -34,6 +34,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.8,
     },
     {
+      url: "https://aniketchavan.in/apps/nospoti",
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
+    {
       url: `${config.site}/blogs`,
       changeFrequency: "daily",
       priority: 0.7,

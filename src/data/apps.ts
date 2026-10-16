@@ -1,3 +1,9 @@
+export const noSpoti = {
+  webUrl: "https://no-spoti.vercel.app/app/",
+  downloadUrl: "https://no-spoti.vercel.app/No-Spoti.apk",
+  repository: "https://github.com/Aniketchavan7/No-Spoti",
+};
+
 export const winterArc = {
   name: "Winter Arc",
   webUrl: "https://winter-arc-iota-tawny.vercel.app",
@@ -14,6 +20,17 @@ export const claimEngine = {
 };
 
 export const apps = [
+  {
+    slug: "nospoti",
+    name: "NoSpoti",
+    category: "Music & shared listening",
+    description:
+      "Find your next favourite, build your library, and listen together in a Jam. An ad-free, open-source music app for Android and the web.",
+    platform: "Web & Android · Open source",
+    href: "/apps/nospoti",
+    action: "Explore NoSpoti",
+    external: false,
+  },
   {
     slug: "winterarc",
     name: winterArc.name,

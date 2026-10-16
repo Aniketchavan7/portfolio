@@ -6,6 +6,7 @@ import {
   ArrowUpRight,
   Building2,
   FileCheck2,
+  Headphones,
 } from "lucide-react";
 import { ArcMark } from "@/components/apps/arc-mark";
 import { apps } from "@/data/apps";
@@ -13,7 +14,7 @@ import { appMetadata } from "@/lib/app-metadata";
 
 export const metadata = appMetadata(
   "Apps | Aniket Chavan",
-  "Explore Winter Arc, RentalGO, and Insurance Claim Engine. Learn about the apps, download Winter Arc for Android, or launch an app online.",
+  "Explore NoSpoti, Winter Arc, RentalGO, and Insurance Claim Engine. Discover the apps, download for Android, or launch an app online.",
   "/apps",
 );
 
@@ -35,7 +36,7 @@ export default function AppsPage() {
             for your <em>everyday.</em>
           </h1>
           <p>
-            Explore what I’m building. Find a daily practice, a place to stay,
+            Explore what I’m building. Find your next song, a daily practice, a place to stay,
             or a clearer way to understand a claim.
           </p>
         </header>
@@ -48,7 +49,9 @@ export default function AppsPage() {
             <article className={`directory-card ${app.slug}`} key={app.slug}>
               <div className="directory-art" aria-hidden="true">
                 <span className="directory-index">0{index + 1}</span>
-                {app.slug === "winterarc" ? (
+                {app.slug === "nospoti" ? (
+                  <Headphones strokeWidth={1.3} />
+                ) : app.slug === "winterarc" ? (
                   <ArcMark />
                 ) : app.slug === "rentalgo" ? (
                   <Building2 strokeWidth={1.3} />
@@ -56,7 +59,9 @@ export default function AppsPage() {
                   <FileCheck2 strokeWidth={1.3} />
                 )}
                 <span className="directory-art-caption">
-                  {app.slug === "winterarc"
+                  {app.slug === "nospoti"
+                    ? "YOUR MUSIC. YOUR MOMENT."
+                    : app.slug === "winterarc"
                     ? "A LITTLE, EVERY DAY."
                     : app.slug === "rentalgo"
                       ? "FIND YOUR NEXT PLACE."

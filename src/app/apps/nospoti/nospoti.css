@@ -1,0 +1,120 @@
+.nospoti-landing {
+  background: #09090b;
+  color: #f4f4f5;
+  min-height: 100dvh;
+  isolation: isolate;
+  position: relative;
+  line-height: 1.5;
+  overflow: clip;
+}
+.nospoti-landing h1,
+.nospoti-landing h2,
+.nospoti-landing h3 {
+  font-family: inherit;
+}
+.nospoti-landing p {
+  text-wrap: pretty;
+}
+.nospoti-landing section {
+  scroll-margin-top: 104px;
+}
+.nospoti-landing button,
+.nospoti-landing a,
+.nospoti-landing summary {
+  touch-action: manipulation;
+}
+.nospoti-landing button {
+  min-height: 44px;
+}
+.nospoti-landing :focus-visible {
+  outline: 2px solid #ddfe52;
+  outline-offset: 5px;
+}
+.nospoti-landing #scrubber-bar {
+  min-height: 24px;
+  display: flex;
+  align-items: center;
+}
+.nospoti-landing #progress-bar {
+  height: 8px;
+}
+.nospoti-landing table {
+  min-width: 660px;
+}
+.nospoti-landing .mobile-tab-btn[aria-pressed="true"],
+.nospoti-landing .track-btn[aria-pressed="true"] {
+  background: #ddfe52;
+  color: #09090b;
+  border-color: #ddfe52;
+}
+.nospoti-landing .mobile-tab-btn[aria-pressed="false"] {
+  background: #181820;
+  color: #d4d4d8;
+  box-shadow: none;
+}
+.nospoti-landing img {
+  max-width: 100%;
+}
+.nospoti-landing .waveform-playing {
+  animation: nospoti-pulse 1s ease-in-out infinite alternate;
+}
+@keyframes nospoti-pulse {
+  to {
+    opacity: 0.5;
+  }
+}
+@media (max-width: 480px) {
+  .nospoti-landing nav {
+    padding-inline: 12px;
+    gap: 8px;
+  }
+  .nospoti-landing nav > div:first-child {
+    min-width: 0;
+  }
+  .nospoti-landing nav .font-mono {
+    display: none;
+  }
+  .nospoti-landing nav a {
+    font-size: 11px;
+  }
+  .nospoti-landing #flow-title {
+    font-size: 26px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .nospoti-landing *,
+  .nospoti-landing *::before,
+  .nospoti-landing *::after {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+.nospoti-landing footer > div {
+  flex-wrap: wrap;
+  min-width: 0;
+}
+.nospoti-landing nav > div:first-child {
+  flex-shrink: 0;
+}
+@media (max-width: 360px) {
+  .nospoti-landing h1.text-4xl {
+    font-size: 32px;
+  }
+}
+
+@media (max-width: 480px) {
+  .nospoti-landing nav.max-w-6xl {
+    padding-inline: 12px;
+  }
+  .nospoti-landing #nav-launch-btn {
+    font-size: 11px;
+    flex-shrink: 0;
+    gap: 6px;
+    padding-left: 10px;
+  }
+  .nospoti-landing #nav-launch-btn > span {
+    white-space: nowrap;
+  }
+}

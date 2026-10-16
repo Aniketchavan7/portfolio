@@ -1,0 +1,689 @@
+/* NoSpoti product layout, adapted from the portfolio product page. */
+.nospoti-page {
+  background: var(--paper);
+  color: var(--ink);
+  min-height: 100vh;
+}
+.nospoti-page .studio-container {
+  width: min(1240px, calc(100% - 112px));
+  margin-inline: auto;
+}
+.nospoti-page h1,
+.nospoti-page h2,
+.nospoti-page h3 {
+  font-family: var(--font-sans), Arial, sans-serif;
+  font-weight: 500;
+}
+.nospoti-page em {
+  font-family: Georgia, "Times New Roman", serif;
+  font-weight: 400;
+}
+.nospoti-page p {
+  line-height: 1.7;
+  color: var(--subtle);
+}
+.nospoti-page h1 {
+  font-size: clamp(54px, 7.8vw, 108px);
+  line-height: 1.04;
+  letter-spacing: -0.065em;
+}
+.nospoti-page h2 {
+  font-size: clamp(35px, 4.2vw, 58px);
+  line-height: 1.12;
+  letter-spacing: -0.045em;
+}
+.nospoti-page h3 {
+  letter-spacing: -0.035em;
+}
+.nospoti-page a,
+.nospoti-page button,
+.nospoti-page summary {
+  -webkit-tap-highlight-color: transparent;
+}
+.nospoti-page a:focus-visible,
+.nospoti-page button:focus-visible,
+.nospoti-page summary:focus-visible {
+  outline: 3px solid #8d9fff;
+  outline-offset: 6px;
+}
+.nospoti-page a {
+  transition:
+    color 0.2s,
+    background 0.2s,
+    transform 0.2s;
+}
+.nospoti-page ::selection {
+  background: #dce1fd;
+  color: #20221f;
+}
+.nospoti-page .eyebrow {
+  font:
+    10px/1.5 var(--font-sans),
+    sans-serif;
+  font-weight: 500;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+.nospoti-page .status-point {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #6b8367;
+  flex: 0 0 auto;
+}
+.nospoti-page .section-space {
+  padding-block: 78px;
+}
+.nospoti-page .section-heading {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 30px;
+  margin-bottom: 35px;
+}
+.nospoti-page .section-heading h2 {
+  margin-top: 16px;
+}
+.nospoti-page .text-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 13px;
+  padding-block: 6px;
+}
+.nospoti-page .text-link:hover {
+  color: var(--blue);
+}
+.nospoti-page .studio-button {
+  display: inline-flex;
+  gap: 20px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  padding: 15px 22px;
+  font-size: 13px;
+  font-weight: 500;
+  min-height: 48px;
+}
+.nospoti-page .studio-button:hover {
+  transform: translateY(-2px);
+}
+.nospoti-page .button-outline {
+  border: 1px solid currentColor;
+}
+.nospoti-page .button-terra {
+  color: #171816;
+  background: #d98771;
+}
+.nospoti-page .winter-preview {
+  width: 100%;
+  background: #1d1e1b;
+  border: 1px solid #42453c;
+  border-radius: 10px;
+  color: #edece5;
+  box-shadow: 0 16px 30px #11130f22;
+  text-align: left;
+  overflow: hidden;
+}
+.nospoti-page .preview-top {
+  padding: 17px 22px;
+  border-bottom: 1px solid #373a32;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+.nospoti-page .preview-top > span:first-child {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 10px;
+  letter-spacing: 0.1em;
+}
+.nospoti-page .preview-top svg {
+  width: 23px;
+  height: 23px;
+  color: #d98771;
+}
+.nospoti-page .preview-caption {
+  font-size: 7px;
+  letter-spacing: 0.13em;
+  color: #b3b6a9;
+}
+.nospoti-page .preview-body {
+  padding: 27px 25px 16px;
+}
+.nospoti-page .preview-date {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 8px;
+  letter-spacing: 0.12em;
+  color: #b3b6a9;
+}
+.nospoti-page .winter-preview h3 {
+  font-size: 32px;
+  margin: 16px 0 8px;
+  line-height: 1.12;
+  letter-spacing: -0.045em;
+}
+.nospoti-page .winter-preview h3 em {
+  color: #d98771;
+}
+.nospoti-page .preview-intro {
+  font-size: 10px;
+  color: #b3b6a9;
+}
+.nospoti-page .preview-metrics {
+  display: flex;
+  gap: 30px;
+  margin: 24px 0;
+  padding-block: 16px;
+  border-top: 1px solid #373a32;
+  border-bottom: 1px solid #373a32;
+}
+.nospoti-page .preview-metrics > div > span {
+  display: block;
+  font-size: 7px;
+  letter-spacing: 0.1em;
+  color: #b3b6a9;
+}
+.nospoti-page .preview-metrics strong {
+  display: block;
+  font-size: 24px;
+  font-weight: 400;
+  margin-top: 6px;
+}
+.nospoti-page .preview-metrics small {
+  font-size: 10px;
+  color: #b3b6a9;
+}
+.nospoti-page .preview-arc {
+  margin-left: auto;
+  color: #d98771;
+  align-self: center;
+}
+.nospoti-page .preview-list-heading {
+  display: flex;
+  justify-content: space-between;
+  font-size: 10px;
+}
+.nospoti-page .preview-list-heading span:first-child {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+.nospoti-page .preview-list-heading svg {
+  color: #d98771;
+}
+.nospoti-page .preview-progress {
+  height: 2px;
+  background: #373a32;
+  margin: 14px 0 4px;
+}
+.nospoti-page .preview-progress > span {
+  display: block;
+  height: 2px;
+  background: #99b394;
+  transition: width 0.3s;
+}
+.nospoti-page .task-checkbox {
+  flex: 0 0 auto;
+  display: grid;
+  place-items: center;
+  width: 19px;
+  height: 19px;
+  border: 1px solid #74796a;
+  border-radius: 50%;
+}
+.nospoti-page button.task-checkbox {
+  cursor: pointer;
+}
+.nospoti-page .interactive-preview button.task-checkbox {
+  width: 32px;
+  height: 32px;
+}
+.nospoti-page .is-done .task-checkbox {
+  background: #99b394;
+  color: #1d1e1b;
+  border-color: #99b394;
+}
+.nospoti-page .is-done > div > span {
+  color: #b3b6a9;
+  text-decoration: line-through;
+}
+.nospoti-page .task-xp {
+  font-size: 8px;
+  color: #b3b6a9;
+}
+.nospoti-page .preview-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding-top: 18px;
+  font-size: 8px;
+  color: #b3b6a9;
+}
+.nospoti-page .preview-demo-label {
+  font-size: 8px;
+  letter-spacing: 0.01em;
+  text-align: center;
+  padding: 10px 15px;
+  border-top: 1px solid #373a32;
+  color: #b3b6a9;
+  background: #171816;
+}
+.nospoti-page .product-subnav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 70px;
+  border-bottom: 1px solid #363930;
+  font-size: 12px;
+}
+.nospoti-page .product-subnav > span,
+.nospoti-page .product-subnav > a:last-child {
+  display: flex;
+  gap: 9px;
+  align-items: center;
+}
+.nospoti-page .product-subnav svg {
+  width: 22px;
+  height: 22px;
+}
+.nospoti-page {
+  --ink: #eeeee5;
+  --subtle: #b3b6a9;
+  --rule: #393b33;
+  --blue: #d98771;
+  background: #171816;
+  color: var(--ink);
+}
+.nospoti-page .eyebrow {
+  color: #b3b6a9;
+}
+.nospoti-page em {
+  color: #d98771;
+}
+.nospoti-page .winter-hero {
+  text-align: center;
+  padding-top: 68px;
+}
+.nospoti-page .winter-brand {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  margin-bottom: 22px;
+  letter-spacing: 0.17em;
+  font-size: 13px;
+}
+.nospoti-page .winter-brand svg {
+  color: #d98771;
+}
+.nospoti-page .winter-hero h1 {
+  font-size: clamp(47px, 6.6vw, 90px);
+  margin-top: 28px;
+  letter-spacing: -0.065em;
+}
+.nospoti-page .winter-hero > p {
+  font-size: 17px;
+  margin-top: 27px;
+}
+.nospoti-page .product-actions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 28px;
+  margin-top: 30px;
+  flex-wrap: wrap;
+}
+.nospoti-page .product-platform-note {
+  display: block;
+  font-size: 11px;
+  color: var(--subtle);
+  margin-top: 16px;
+}
+.nospoti-page .winter-showcase {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 65px;
+  margin-top: 65px;
+}
+.nospoti-page .winter-showcase .winter-preview {
+  max-width: 550px;
+}
+.nospoti-page .winter-showcase .preview-body {
+  padding: 34px 38px 23px;
+}
+.nospoti-page .winter-showcase .winter-preview h3 {
+  font-size: 43px;
+}
+.nospoti-page .winter-showcase .preview-intro {
+  font-size: 12px;
+}
+.nospoti-page .showcase-side {
+  font-size: 8px;
+  letter-spacing: 0.2em;
+  color: #b3b6a9;
+  text-align: left;
+  line-height: 2;
+  max-width: 120px;
+}
+.nospoti-page .showcase-side.right {
+  text-align: right;
+}
+.nospoti-page .winter-statement {
+  text-align: center;
+  padding-block: 120px 60px;
+}
+.nospoti-page .winter-statement h2 {
+  margin-top: 26px;
+}
+.nospoti-page .winter-statement p {
+  max-width: 550px;
+  margin: 25px auto 0;
+  font-size: 16px;
+}
+.nospoti-page .product-features {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 22px;
+}
+.nospoti-page .product-features article {
+  padding: 38px;
+  background: #22241f;
+  border: 1px solid #35382f;
+  border-radius: 12px;
+}
+.nospoti-page .feature-icon {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 42px;
+  color: #d98771;
+}
+.nospoti-page .feature-icon span {
+  font-size: 10px;
+  color: var(--subtle);
+}
+.nospoti-page .product-features h3 {
+  font-size: 25px;
+  margin-bottom: 15px;
+}
+.nospoti-page .product-features p {
+  font-size: 14px;
+}
+.nospoti-page .how-section {
+  padding-block: 80px;
+  border-block: 1px solid var(--rule);
+}
+.nospoti-page .how-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 90px;
+}
+.nospoti-page .how-grid h2 {
+  margin-top: 24px;
+}
+.nospoti-page .steps {
+  list-style: none;
+}
+.nospoti-page .steps li {
+  display: flex;
+  gap: 25px;
+  border-top: 1px solid var(--rule);
+  padding: 25px 0;
+}
+.nospoti-page .steps li > span {
+  color: #d98771;
+  font-size: 13px;
+}
+.nospoti-page .steps h3 {
+  font-size: 22px;
+  margin-bottom: 10px;
+}
+.nospoti-page .steps p {
+  font-size: 13px;
+}
+.nospoti-page .download-section {
+  text-align: center;
+  padding-top: 100px;
+}
+.nospoti-page .download-section > svg {
+  margin: 0 auto 25px;
+  color: #d98771;
+  width: 55px;
+  height: 55px;
+}
+.nospoti-page .download-section > h2 {
+  font-size: clamp(55px, 6.5vw, 85px);
+  margin: 23px 0;
+}
+.nospoti-page .download-section > p {
+  font-size: 15px;
+}
+.nospoti-page .download-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 22px;
+  max-width: 900px;
+  margin: 45px auto 0;
+  text-align: left;
+}
+.nospoti-page .download-grid article {
+  border: 1px solid var(--rule);
+  border-radius: 12px;
+  padding: 35px;
+}
+.nospoti-page .download-grid h3 {
+  font-size: 27px;
+  margin-top: 28px;
+}
+.nospoti-page .download-grid p {
+  font-size: 13px;
+  margin: 9px 0 25px;
+}
+.nospoti-page .download-meta {
+  display: block;
+  color: var(--subtle);
+  font-size: 10px;
+  margin-top: 14px;
+}
+.nospoti-page .download-grid details {
+  border-top: 1px solid var(--rule);
+  padding-top: 20px;
+  margin-top: 25px;
+  font-size: 12px;
+}
+.nospoti-page .download-grid details ol {
+  margin: 20px 0 0;
+  padding-left: 16px;
+  list-style: decimal;
+  line-height: 1.8;
+  color: var(--subtle);
+}
+.nospoti-page .browser-note {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  margin-top: 25px;
+  padding-top: 20px;
+  border-top: 1px solid var(--rule);
+}
+.nospoti-page .faq-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 70px;
+  padding-block: 55px 90px;
+}
+.nospoti-page .faq-section h2 {
+  font-size: 37px;
+  margin-top: 20px;
+}
+.nospoti-page .faq-list details {
+  border-bottom: 1px solid var(--rule);
+  padding: 22px 0;
+}
+.nospoti-page .faq-list details:first-child {
+  border-top: 1px solid var(--rule);
+}
+.nospoti-page .faq-list summary {
+  cursor: pointer;
+  font-size: 14px;
+  padding-right: 20px;
+}
+.nospoti-page .faq-list p {
+  font-size: 13px;
+  margin-top: 15px;
+}
+.nospoti-page .product-signoff {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  padding-block: 25px;
+  border-top: 1px solid var(--rule);
+  font-size: 11px;
+  color: var(--subtle);
+}
+@media (min-width: 1600px) {
+  .nospoti-page .studio-container {
+    width: min(1360px, calc(100% - 160px));
+  }
+}
+@media (max-width: 1050px) {
+  .nospoti-page .studio-container {
+    width: calc(100% - 64px);
+  }
+  .nospoti-page .showcase-side {
+    display: none;
+  }
+}
+@media (max-width: 760px) {
+  .nospoti-page .studio-container {
+    width: calc(100% - 40px);
+  }
+  .nospoti-page h1 {
+    font-size: clamp(46px, 9.5vw, 70px);
+  }
+  .nospoti-page .section-space {
+    padding-block: 50px;
+  }
+  .nospoti-page .section-heading {
+    gap: 18px;
+    margin-bottom: 26px;
+    align-items: flex-start;
+  }
+  .nospoti-page .section-heading h2 {
+    font-size: 34px;
+  }
+  .nospoti-page .section-heading > .text-link {
+    margin-top: 30px;
+    white-space: nowrap;
+    font-size: 11px;
+  }
+  .nospoti-page .preview-body {
+    padding-inline: 22px;
+  }
+  .nospoti-page .product-subnav {
+    font-size: 10px;
+    height: 58px;
+  }
+  .nospoti-page .product-subnav > span {
+    gap: 4px;
+  }
+  .nospoti-page .product-subnav > span svg {
+    width: 19px;
+  }
+  .nospoti-page .winter-hero {
+    padding-top: 46px;
+  }
+  .nospoti-page .winter-hero h1 {
+    font-size: clamp(39px, 8.4vw, 63px);
+  }
+  .nospoti-page .winter-hero > p {
+    font-size: 14px;
+  }
+  .nospoti-page .winter-brand {
+    font-size: 11px;
+  }
+  .nospoti-page .winter-brand svg {
+    width: 31px;
+  }
+  .nospoti-page .product-actions {
+    gap: 20px;
+  }
+  .nospoti-page .winter-showcase {
+    margin-top: 40px;
+  }
+  .nospoti-page .winter-showcase .preview-body {
+    padding: 26px 22px 18px;
+  }
+  .nospoti-page .winter-showcase .winter-preview h3 {
+    font-size: 36px;
+  }
+  .nospoti-page .winter-statement {
+    padding-block: 75px 25px;
+  }
+  .nospoti-page .winter-statement h2 {
+    font-size: 31px;
+  }
+  .nospoti-page .winter-statement p {
+    font-size: 14px;
+  }
+  .nospoti-page .product-features {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+  .nospoti-page .product-features article {
+    padding: 28px;
+  }
+  .nospoti-page .feature-icon {
+    margin-bottom: 25px;
+  }
+  .nospoti-page .product-features h3 {
+    font-size: 24px;
+  }
+  .nospoti-page .how-section {
+    padding-block: 50px;
+  }
+  .nospoti-page .how-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+  .nospoti-page .download-grid {
+    grid-template-columns: 1fr;
+  }
+  .nospoti-page .download-grid article {
+    padding: 28px;
+  }
+  .nospoti-page .faq-section {
+    grid-template-columns: 1fr;
+    gap: 28px;
+    padding-block: 30px 60px;
+  }
+  .nospoti-page .product-signoff {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .nospoti-page .desktop-break {
+    display: none;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .nospoti-page * {
+    transition: none !important;
+  }
+}
+
+.nospoti-page { min-height: 100vh; font-weight: 400; }
+.nospoti-page section[id] { scroll-margin-top: 25px; }
