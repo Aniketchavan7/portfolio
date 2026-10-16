@@ -7,7 +7,7 @@ The portfolio keeps its existing theme and interactive keyboard. The header Apps
 - `/apps/claim-decision-engine`: claim-engine landing page with a Try Claim Engine link to https://aniketnew7-claim-decision-engine.hf.space/.
 - RentalGO opens https://www.rentalgo.in/ directly.
 
-App records and release URLs are in `src/data/apps.ts`. The linked Winter Arc APK is v1.0.2, the latest documented build on origin/main (54d8390) when checked on 2026-10-01. The hosted APK was downloaded for verification and matched SHA-256 43F409C9D1B7646E1215519F5490D81DDF728EA9DCFE41CAE48B6B9F4AB5860C. The download button uses the existing app host rather than duplicating the binary in this repository.
+App records and release URLs are in `src/data/apps.ts`. The linked Winter Arc APK is v2.0.0 from the current Daily Tasks and Must Do release. The hosted APK was downloaded for verification and matched SHA-256 28450B3AC6283568F80194C4247C06302D590364B694E25E7FCDD6739B9492B4. The download button uses the existing app host rather than duplicating the binary in this repository.
 
 All app CSS is scoped to its page class to avoid affecting the portfolio. The Apps directory uses the portfolio's Unbounded headings, Space Grotesk body type, monochrome theme tokens, and saved light/dark preference. Product landing pages retain their own branding. App pages bypass the portfolio's decorative overlays and 3D preloader. Homepage refinements use scoped `home.css`, show the introduction without waiting for the keyboard, add the About anchor, and present project summaries with real site captures where available. Fonts, theme tokens, dependencies, and global styles remain unchanged.
 

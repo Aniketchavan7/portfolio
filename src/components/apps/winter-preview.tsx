@@ -5,22 +5,22 @@ import { ArcMark } from "./arc-mark";
 
 const sampleTasks = [
   {
-    time: "07:00",
-    title: "Start with a little movement",
-    detail: "Health · 20 min",
-    xp: 10,
+    time: "06:30",
+    title: "Morning prayer",
+    detail: "06:30–07:00",
+    tracked: true,
   },
   {
-    time: "09:00",
-    title: "Make space for focused work",
-    detail: "Deep work · 60 min",
-    xp: 30,
+    time: "08:00",
+    title: "LeetCode Daily",
+    detail: "08:00–09:00",
+    tracked: true,
   },
   {
-    time: "21:00",
-    title: "Reflect on the day",
-    detail: "Reflection · 10 min",
-    xp: 10,
+    time: "18:30",
+    title: "Evening workout",
+    detail: "18:30–19:15",
+    tracked: false,
   },
 ];
 
@@ -39,38 +39,34 @@ export function WinterPreview({
         <span>
           <ArcMark /> WINTER ARC
         </span>
-        <span className="preview-caption">A LITTLE, EVERY DAY.</span>
+        <span className="preview-caption">DAILY TASKS / MUST DO</span>
       </div>
       <div className="preview-body">
         <div className="preview-date">
-          <span className="status-point" /> YOUR DAILY PRACTICE
+          <span className="status-point" /> TODAY&apos;S ROADMAP
         </div>
         <h3>
-          A fresh page,
+          Plan the day.
           <br />
-          <em>a fresh start.</em>
+          <em>Keep the promise.</em>
         </h3>
-        <p className="preview-intro">Keep the next promise to yourself.</p>
+        <p className="preview-intro">
+          Every task has a start time and a deadline.
+        </p>
         <div
           className="preview-metrics"
           aria-live={interactive ? "polite" : "off"}
         >
           <div>
-            <span>COMMITMENTS</span>
+            <span>ON TIME</span>
             <strong>
               {completed}
               <small> / 3</small>
             </strong>
           </div>
           <div>
-            <span>TODAY’S GROWTH</span>
-            <strong>
-              {sampleTasks.reduce(
-                (sum, task, i) => sum + (done[i] ? task.xp : 0),
-                0,
-              )}
-              <small> XP</small>
-            </strong>
+            <span>MUST DO</span>
+            <strong>2</strong>
           </div>
           <div className="preview-arc">
             <ArcMark />
@@ -78,7 +74,7 @@ export function WinterPreview({
         </div>
         <div className="preview-list-heading">
           <span>
-            <Sun size={14} /> The day ahead
+            <Sun size={14} /> Daily Tasks
           </span>
           <span>{Math.round((completed / 3) * 100)}%</span>
         </div>
@@ -117,15 +113,30 @@ export function WinterPreview({
                 <span>{task.title}</span>
                 <small>{task.detail}</small>
               </div>
-              <span className="task-xp">+{task.xp}</span>
+              <span className="task-xp">
+                {task.tracked ? "MUST DO" : "DAILY"}
+              </span>
             </div>
           ))}
+        </div>
+        <div className="preview-goal-history">
+          <div>
+            <span>LEETCODE DAILY</span>
+            <small>{[true, true, false, true, true, false, done[1]].filter(Boolean).length}/7 on time</small>
+          </div>
+          <div className="preview-heatmap" aria-label="LeetCode Daily sample heatmap">
+            {[true, true, false, true, true, false, done[1]].map(
+              (complete, index) => (
+                <i className={complete ? "is-complete" : ""} key={index} />
+              ),
+            )}
+          </div>
         </div>
         <div className="preview-bottom">
           <span>
             {interactive
-              ? "Try checking off a commitment"
-              : "Make a promise. Keep it today."}
+              ? "Try completing a task on time"
+              : "Schedule. Complete. Contribute."}
           </span>
           <ArrowUpRight size={16} />
         </div>
