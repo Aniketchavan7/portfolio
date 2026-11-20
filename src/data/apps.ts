@@ -1,6 +1,6 @@
 export const noSpoti = {
-  webUrl: "https://no-spoti.vercel.app/app/",
-  downloadUrl: "https://no-spoti.vercel.app/No-Spoti.apk",
+  webUrl: "https://nospoti.aniket7.workers.dev/app/",
+  downloadUrl: "https://nospoti.aniket7.workers.dev/No-Spoti.apk",
   repository: "https://github.com/Aniketchavan7/No-Spoti",
 };
 
