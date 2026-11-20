@@ -147,6 +147,34 @@ const projects: Project[] = [
       frontend: [PROJECT_SKILLS.react, PROJECT_SKILLS.js, PROJECT_SKILLS.html, PROJECT_SKILLS.css],
       backend: [PROJECT_SKILLS.python, PROJECT_SKILLS.restapi, PROJECT_SKILLS.llm, PROJECT_SKILLS.langchain],
     },
+  {
+    id: "no-spoti",
+    category: "Mobile / Decentralized Streaming",
+    title: "NoSpoti — Private Music Streaming Platform & APK",
+    summary: "Zero-ads, subscription-free music streaming app and progressive web application built with React Native (Expo SDK), SQLite, and Audius decentralized streaming.",
+    contribution: "Engineered offline SQLite cache, audio playback engine, Kotlin native module, and responsive landing interface.",
+    src: "/assets/projects-screenshots/no-spoti.png",
+    screenshots: [],
+    skills: {
+      frontend: [PROJECT_SKILLS.react, PROJECT_SKILLS.js, PROJECT_SKILLS.html, PROJECT_SKILLS.css],
+      backend: [PROJECT_SKILLS.restapi],
+    },
+    live: "https://github.com/Aniketchavan7/no-spoti-releases",
+    github: "https://github.com/Aniketchavan7/No-Spoti",
+    get content() {
+      return (
+        <div>
+          <TypographyP className="font-mono text-2xl text-center">
+            Zero-Ads Decentralized Audio Streaming Platform
+          </TypographyP>
+          <TypographyP className="font-mono">
+            Subscription-free music streaming app and progressive web application built with React Native (Expo SDK), Expo Router, Audius decentralized audio, and local SQLite library storage.
+          </TypographyP>
+          <ProjectsLinks live={this.live} repo={this.github} />
+        </div>
+      );
+    },
+  },
     live: "https://railpulse.pages.dev",
     github: "https://github.com/Aniketchavan7/Railway-App",
     get content() {
