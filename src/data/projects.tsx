@@ -136,6 +136,34 @@ export type Project = {
 
 const projects: Project[] = [
   {
+    id: "railway-app",
+    category: "Full Stack / AI Telemetry",
+    title: "RailPulse — Real-Time Railway Tracking Engine",
+    summary: "AI-powered Indian Railway tracking platform with live GPS telemetry, WebSockets, and a grounded LangGraph travel assistant.",
+    contribution: "Architected FastAPI backend, Next.js 15 MapLibre frontend, Upstash Redis caching, and LangGraph AI agent.",
+    src: "/assets/projects-screenshots/railway-app.png",
+    screenshots: [],
+    skills: {
+      frontend: [PROJECT_SKILLS.react, PROJECT_SKILLS.js, PROJECT_SKILLS.html, PROJECT_SKILLS.css],
+      backend: [PROJECT_SKILLS.python, PROJECT_SKILLS.restapi, PROJECT_SKILLS.llm, PROJECT_SKILLS.langchain],
+    },
+    live: "https://railpulse.pages.dev",
+    github: "https://github.com/Aniketchavan7/Railway-App",
+    get content() {
+      return (
+        <div>
+          <TypographyP className="font-mono text-2xl text-center">
+            AI-Powered Indian Railway Tracking SaaS Engine
+          </TypographyP>
+          <TypographyP className="font-mono">
+            A production-oriented Indian Railway tracking platform built with Next.js 15, FastAPI, PostgreSQL (Neon), Redis (Upstash), MapLibre GL, WebSockets, and a grounded LangGraph AI travel assistant.
+          </TypographyP>
+          <ProjectsLinks live={this.live} repo={this.github} />
+        </div>
+      );
+    },
+  },
+  {
     id: "spring-money",
     category: "Gen AI / Industry",
     title: "Spring Money — Multi-Agent System",
