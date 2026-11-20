@@ -41,7 +41,7 @@ const config = {
   },
   openSource: {
     achievementsUrl: "https://github.com/Aniketchavan7?tab=achievements",
-    badges: ["Galaxy Brain Gold", "Pair Extraordinaire Silver", "Pull Shark Silver", "Quickdraw", "YOLO"],
+    badges: ["Pull Shark", "Quickdraw", "YOLO"],
     featuredRepositories: [
       "Railway-App",
       "claim-decision-engine",
