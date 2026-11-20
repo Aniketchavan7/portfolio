@@ -37,6 +37,7 @@ const config = {
     linkedin: "https://www.linkedin.com/in/aniket-chavan",
     github: "https://github.com/Aniketchavan7",
     codolio: "https://codolio.com/profile/Aniket_chavan7",
+    youtube: "https://youtube.com/@techcodeai-e3o",
   },
 };
 export { config };
