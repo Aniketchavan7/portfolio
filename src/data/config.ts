@@ -39,5 +39,16 @@ const config = {
     codolio: "https://codolio.com/profile/Aniket_chavan7",
     youtube: "https://youtube.com/@techcodeai-e3o",
   },
+  openSource: {
+    achievementsUrl: "https://github.com/Aniketchavan7?tab=achievements",
+    badges: ["Galaxy Brain Gold", "Pair Extraordinaire Silver", "Pull Shark Silver", "Quickdraw", "YOLO"],
+    featuredRepositories: [
+      "Railway-App",
+      "claim-decision-engine",
+      "Rag_system",
+      "Winter-arc",
+      "Spring_money-AI-agentic-chatbot",
+    ],
+  },
 };
 export { config };
