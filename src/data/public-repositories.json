@@ -1,0 +1,362 @@
+[
+  {
+    "description": "Custom creative design and lifestyle storefront web application built with TypeScript and Tailwind CSS.",
+    "fork": false,
+    "language": "TypeScript",
+    "name": "-Akanksha-creations"
+  },
+  {
+    "description": "Full-stack engineering assignment submission built with TypeScript, React, and PostgreSQL.",
+    "fork": false,
+    "language": "TypeScript",
+    "name": "8x-assignment"
+  },
+  {
+    "description": "The job search that runs on your machine. AI job application framework built on Claude Code: evaluate postings, tailor CVs, write cover letters, prep interviews. Fork it and own it.",
+    "fork": true,
+    "language": null,
+    "name": "ai-job-search"
+  },
+  {
+    "description": "Emotion-adaptive AI chatbot combining Facial Emotion Detection with prompt engineering for affective computing and context-aware responses.",
+    "fork": false,
+    "language": null,
+    "name": "AIchatbot"
+  },
+  {
+    "description": "Config files for my GitHub profile.",
+    "fork": false,
+    "language": null,
+    "name": "Aniketchavan7"
+  },
+  {
+    "description": "Agent skill for beautiful, verifiable architecture, workflow, sequence, data-flow, and lifecycle diagrams\u2014self-contained HTML with motion and crisp export.",
+    "fork": true,
+    "language": null,
+    "name": "archify"
+  },
+  {
+    "description": "Collection of awesome LLM apps with AI Agents and RAG using OpenAI, Anthropic, Gemini and opensource models.",
+    "fork": true,
+    "language": null,
+    "name": "awesome-llm-apps"
+  },
+  {
+    "description": "An open-source, self-hosted personal AI note tool prioritizing privacy, built using TypeScript .",
+    "fork": true,
+    "language": "TypeScript",
+    "name": "blinko"
+  },
+  {
+    "description": "AI-powered job search system built on Claude Code. 14 skill modes, Go dashboard, PDF generation, batch processing.",
+    "fork": true,
+    "language": null,
+    "name": "career-ops"
+  },
+  {
+    "description": "Four specialised LLM agents adjudicate health-insurance claims with clause-grounded audit trails.",
+    "fork": false,
+    "language": "HTML",
+    "name": "claim-decision-engine"
+  },
+  {
+    "description": "\"CLI-Anything: Making ALL Software Agent-Native\" -- CLI-Hub: https://clianything.cc/",
+    "fork": true,
+    "language": null,
+    "name": "CLI-Anything"
+  },
+  {
+    "description": "Python composable command line interface toolkit",
+    "fork": true,
+    "language": null,
+    "name": "click"
+  },
+  {
+    "description": "Curated design guidelines, art directions, and aesthetic resources to build stunning web apps and eliminate AI slop.",
+    "fork": false,
+    "language": null,
+    "name": "create_stunning_apps"
+  },
+  {
+    "description": "Interactive, static digital wedding invitation web experience built with HTML, CSS, and modern web animations.",
+    "fork": false,
+    "language": "CSS",
+    "name": "dosa-wedding--card"
+  },
+  {
+    "description": "Transparent hovering AI desktop copilot for screen and voice with progressive DSA hints and real-time debugging.",
+    "fork": false,
+    "language": "JavaScript",
+    "name": "float_dot"
+  },
+  {
+    "description": "Use Claude Code, Codex, VSCode, Pi, and OpenCode (and 6 other harnesses) for free (1.3B+ free tokens) from your terminal, app, IDE, or phone, and now from the browser with native browser sessions (multi-harness + multi-model) like OpenClaw (voice supported + ToS friendly)",
+    "fork": true,
+    "language": "Python",
+    "name": "free-claude-code"
+  },
+  {
+    "description": "7.4 billion tokens per month. 34 free LLM providers. 635 free model endpoints. All behind one /v1 endpoint, plus any custom OpenAI-compatible endpoint. Smart routing, automatic failover, encrypted keys. Personal experimentation only.",
+    "fork": true,
+    "language": "TypeScript",
+    "name": "freellmapi"
+  },
+  {
+    "description": "21 Lessons, Get Started Building with Generative AI ",
+    "fork": true,
+    "language": null,
+    "name": "generative-ai-for-beginners"
+  },
+  {
+    "description": "A generative world for general-purpose robotics & embodied AI learning.",
+    "fork": true,
+    "language": null,
+    "name": "Genesis"
+  },
+  {
+    "description": "The only downloader you need. \u4e0b\u8f7d\u5668\u7684\u96c6\u5927\u6210\u8005\u3002",
+    "fork": true,
+    "language": null,
+    "name": "Ghost-Downloader-3"
+  },
+  {
+    "description": "Anti-AI-slop design skill for Claude Code, Cursor, and Codex.",
+    "fork": true,
+    "language": null,
+    "name": "hallmark"
+  },
+  {
+    "description": "structured outputs for llms ",
+    "fork": true,
+    "language": null,
+    "name": "instructor"
+  },
+  {
+    "description": "Hands-on Java exercises, problem sets, and solutions from JetBrains Academy course.",
+    "fork": false,
+    "language": "HTML",
+    "name": "java"
+  },
+  {
+    "description": "These are resources, roadmaps, links to learn Java Backend :)",
+    "fork": true,
+    "language": null,
+    "name": "Java-Backend"
+  },
+  {
+    "description": "Comprehensive Java revision notes, syntax guides, and core programming exercises.",
+    "fork": false,
+    "language": "HTML",
+    "name": "java_revise"
+  },
+  {
+    "description": "Modern full-stack Jira clone built with React 19, Vite, TypeScript, and Tailwind CSS.",
+    "fork": false,
+    "language": null,
+    "name": "Jira"
+  },
+  {
+    "description": "The agent engineering platform.",
+    "fork": true,
+    "language": null,
+    "name": "langchain"
+  },
+  {
+    "description": "Non-autoregressive System 1 decision engine. Typed choice, score and yes/no decisions over any text in a single forward pass, in 100+ languages, with a router that picks the right checkpoint per request.",
+    "fork": true,
+    "language": "Python",
+    "name": "laya"
+  },
+  {
+    "description": "1,000 LeetCode Problems Explained: Comprehensive Interview-Ready Explanations, Intuition Walkthroughs, and Optimal Java & Python Solutions",
+    "fork": false,
+    "language": "Python",
+    "name": "leetcode"
+  },
+  {
+    "description": "The fastest, litest AI Gateway. Rust core with Python SDK. Call 100+ LLM APIs in OpenAI (or native) format with cost tracking, guardrails, load balancing, and logging [Bedrock, Azure, OpenAI, Anthropic, OpenAI, VertexAI, vLLM, Nvidia NIM]",
+    "fork": true,
+    "language": null,
+    "name": "litellm"
+  },
+  {
+    "description": "Professional corporate website for Duramet Technologies built with TypeScript and modern frontend stack.",
+    "fork": false,
+    "language": "TypeScript",
+    "name": "new-love"
+  },
+  {
+    "description": "Official public APK releases for NoSpoti \u2014 Ad-free music streaming Android app with offline playback and local caching.",
+    "fork": false,
+    "language": null,
+    "name": "no-spoti-releases"
+  },
+  {
+    "description": "Open GenAI Stack",
+    "fork": true,
+    "language": "Python",
+    "name": "ogx"
+  },
+  {
+    "description": "OpenCluely is a free, open source Cluely (alternative), built for technical interviews like DSA, OAs, and CP. It offers an invisible overlay, real-time AI help, Smart Image Processing for question capture, and multi-language support : 100% customizable and private.",
+    "fork": true,
+    "language": null,
+    "name": "OpenCluely"
+  },
+  {
+    "description": "\ud83d\ude4c OpenHands: AI-Driven Development",
+    "fork": true,
+    "language": null,
+    "name": "OpenHands"
+  },
+  {
+    "description": "Contribution activity script and art generator for GitHub profile heatmaps.",
+    "fork": false,
+    "language": null,
+    "name": "paint-github-41350"
+  },
+  {
+    "description": "PhotoCraft: An open-source, photo editor written by scratch in pure Rust",
+    "fork": true,
+    "language": null,
+    "name": "photocraft"
+  },
+  {
+    "description": "Speed up downloads by combining multiple network connections in parallel",
+    "fork": true,
+    "language": null,
+    "name": "plexo"
+  },
+  {
+    "description": "Personal portfolio website showcasing AI engineering projects, multi-agent systems, and real-time architectures.",
+    "fork": false,
+    "language": "TypeScript",
+    "name": "portfolio"
+  },
+  {
+    "description": "Curated list of project-based tutorials",
+    "fork": true,
+    "language": null,
+    "name": "project-based-learning"
+  },
+  {
+    "description": "Large Language Model experimentation, prompt pipelines, and model evaluation sandbox.",
+    "fork": false,
+    "language": null,
+    "name": "projectllm"
+  },
+  {
+    "description": "How Python does AI. Agents, realtime voice, image generation, embeddings. Every model, every interface, typed end to end.",
+    "fork": true,
+    "language": null,
+    "name": "pydantic-ai"
+  },
+  {
+    "description": "Production-grade Hybrid RAG system over Agentic AI literature with LangGraph, ChromaDB, BM25 + dense search, Reciprocal Rank Fusion, and citation grounding.",
+    "fork": false,
+    "language": "Python",
+    "name": "Rag_system"
+  },
+  {
+    "description": "AI-Powered Indian Railway Tracking SaaS Engine \u2014 Real-time telemetry, WebSockets, MapLibre GL, LangGraph AI assistant, and multi-provider fallback.",
+    "fork": false,
+    "language": "Python",
+    "name": "Railway-App"
+  },
+  {
+    "description": "Modern web frontend application built with Vite, TypeScript, Tailwind CSS, and Shadcn UI components.",
+    "fork": false,
+    "language": "TypeScript",
+    "name": "rangoliweb"
+  },
+  {
+    "description": "Reverse engineer anything with agents, from app behavior down to native binaries.",
+    "fork": true,
+    "language": null,
+    "name": "rea"
+  },
+  {
+    "description": "A coding-agent skill for multi-phase security audits with independently verified, machine-readable findings",
+    "fork": true,
+    "language": null,
+    "name": "security-audit-skill"
+  },
+  {
+    "description": "\ud83d\udcab Toolkit to help you get started with SDD or any other process!",
+    "fork": true,
+    "language": null,
+    "name": "spec-kit"
+  },
+  {
+    "description": "Foundational low latency web data collecting in Rust",
+    "fork": true,
+    "language": null,
+    "name": "spider"
+  },
+  {
+    "description": "Autonomous multi-agent research, draft, and verification pipeline for financial content and investment analysis.",
+    "fork": false,
+    "language": "HTML",
+    "name": "Spring_money-AI-agentic-chatbot"
+  },
+  {
+    "description": "A cross-platform Electron Desktop App to stream and download any Movie, TV Series or Anime in the World. Zero Ads and Tracking",
+    "fork": true,
+    "language": null,
+    "name": "streambert"
+  },
+  {
+    "description": "An agentic skills framework & software development methodology that works.",
+    "fork": true,
+    "language": "Shell",
+    "name": "superpowers"
+  },
+  {
+    "description": "\ud83e\udde0 An illustrated, visual reference for distributed systems and system design with intuitive analogies and code.",
+    "fork": false,
+    "language": "Python",
+    "name": "system-design-illustrated"
+  },
+  {
+    "description": "Learn how to design large-scale systems. Prep for the system design interview.  Includes Anki flashcards.",
+    "fork": true,
+    "language": null,
+    "name": "system-design-primer"
+  },
+  {
+    "description": "Testing application and project deep-dive sandbox for web components.",
+    "fork": false,
+    "language": "JavaScript",
+    "name": "Test"
+  },
+  {
+    "description": "Interactive React and TypeScript web application interface prototype.",
+    "fork": false,
+    "language": "TypeScript",
+    "name": "test-"
+  },
+  {
+    "description": "Experimental prototyping sandbox for testing algorithms and developer utilities.",
+    "fork": false,
+    "language": null,
+    "name": "tp"
+  },
+  {
+    "description": "Containerized full-stack Python and TypeScript application with CLI and backend services.",
+    "fork": false,
+    "language": "Python",
+    "name": "updatedProject"
+  },
+  {
+    "description": "Data Science and Machine Learning laboratory experiments, data analysis, and Jupyter notebooks.",
+    "fork": false,
+    "language": "Jupyter Notebook",
+    "name": "work"
+  },
+  {
+    "description": "A self-hosted UPI & COD payment gateway with zero per-transaction platform fees, universal JavaScript checkout integration, dynamic QR payments, WhatsApp OTP authentication, and automated payment verification.",
+    "fork": true,
+    "language": "JavaScript",
+    "name": "YouPI-PG"
+  }
+]

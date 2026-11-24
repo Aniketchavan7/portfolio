@@ -231,3 +231,10 @@
     gap: 15px;
   }
 }
+
+.repo-directory { margin-block: 4rem; }
+.repo-directory summary { cursor: pointer; padding-block: 1rem; font-weight: 600; }
+.repo-directory ul { display: grid; grid-template-columns: repeat(auto-fit,minmax(min(100%,280px),1fr)); gap: 1rem 2rem; padding-bottom: 2rem; }
+.repo-directory li { border-top: 1px solid hsl(var(--border)); padding-top: 1rem; overflow-wrap: anywhere; }
+.repo-directory li a { font-weight: 650; text-decoration: underline; text-underline-offset: 3px; }
+.repo-directory li p { margin-top: .5rem; font-size: .9rem; color: hsl(var(--muted-foreground)); }

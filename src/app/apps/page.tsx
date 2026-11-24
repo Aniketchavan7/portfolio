@@ -6,15 +6,16 @@ import {
   ArrowUpRight,
   Building2,
   FileCheck2,
-  Headphones,
+  Headphones, Network, TrainFront,
 } from "lucide-react";
 import { ArcMark } from "@/components/apps/arc-mark";
+import repositories from "@/data/public-repositories.json";
 import { apps } from "@/data/apps";
 import { appMetadata } from "@/lib/app-metadata";
 
 export const metadata = appMetadata(
   "Apps | Aniket Chavan",
-  "Explore NoSpoti, Winter Arc, RentalGO, and Insurance Claim Engine. Discover the apps, download for Android, or launch an app online.",
+  "Explore NoSpoti, Winter Arc, System Design Illustrated, RailPulse, and public GitHub projects. Discover the apps, download for Android, or launch an app online.",
   "/apps",
 );
 
@@ -30,15 +31,8 @@ export default function AppsPage() {
         </nav>
         <header className="apps-intro">
           <span className="apps-eyebrow">THE COLLECTION</span>
-          <h1>
-            Apps, ready
-            <br />
-            for your <em>everyday.</em>
-          </h1>
-          <p>
-            Explore what I’m building. Find your next song, a daily practice, a place to stay,
-            or a clearer way to understand a claim.
-          </p>
+          <h1>Apps and projects</h1>
+          <p>Explore featured work or browse the <a href="#repositories"><u>GitHub repository directory</u></a>.</p>
         </header>
         <div className="apps-section-label">
           <h2>Explore the apps</h2>
@@ -53,19 +47,13 @@ export default function AppsPage() {
                   <Headphones strokeWidth={1.3} />
                 ) : app.slug === "winterarc" ? (
                   <ArcMark />
-                ) : app.slug === "rentalgo" ? (
+                ) : app.slug === "railpulse" ? (<TrainFront />) : app.slug === "system-design" ? (<Network />) : app.slug === "rentalgo" ? (
                   <Building2 strokeWidth={1.3} />
                 ) : (
                   <FileCheck2 strokeWidth={1.3} />
                 )}
                 <span className="directory-art-caption">
-                  {app.slug === "nospoti"
-                    ? "YOUR MUSIC. YOUR MOMENT."
-                    : app.slug === "winterarc"
-                    ? "A LITTLE, EVERY DAY."
-                    : app.slug === "rentalgo"
-                      ? "FIND YOUR NEXT PLACE."
-                      : "FOLLOW THE EVIDENCE."}
+                  {app.platform}
                 </span>
               </div>
               <div className="directory-card-body">
@@ -94,6 +82,19 @@ export default function AppsPage() {
             </article>
           ))}
         </div>
+        <section id="repositories" className="repo-directory">
+          <div className="apps-section-label"><h2>GitHub repositories</h2><span>{repositories.length} PUBLIC</span></div>
+          {[false, true].map(fork => {
+            const entries = repositories.filter(repo => repo.fork === fork);
+            return <details key={String(fork)} open={!fork}>
+              <summary>{fork ? "Forks" : "Projects"} ({entries.length})</summary>
+              <ul>{entries.map(repo => (
+                <li key={repo.name}><a href={`https://github.com/Aniketchavan7/${repo.name}`}>{repo.name}</a>
+                <p>{repo.description || repo.language || "View repository on GitHub."}</p></li>
+              ))}</ul>
+            </details>;
+          })}
+        </section>
         <footer className="apps-footer">
           <span>Personal projects & collaborative work.</span>
           <Link href="/">
