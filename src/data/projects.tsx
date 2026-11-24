@@ -147,6 +147,22 @@ const projects: Project[] = [
       frontend: [PROJECT_SKILLS.react, PROJECT_SKILLS.js, PROJECT_SKILLS.html, PROJECT_SKILLS.css],
       backend: [PROJECT_SKILLS.python, PROJECT_SKILLS.restapi, PROJECT_SKILLS.llm, PROJECT_SKILLS.langchain],
     },
+    live: "https://railpulse-01i.pages.dev",
+    github: "https://github.com/Aniketchavan7/Railway-App",
+    get content() {
+      return (
+        <div>
+          <TypographyP className="font-mono text-2xl text-center">
+            AI-Powered Indian Railway Tracking SaaS Engine
+          </TypographyP>
+          <TypographyP className="font-mono">
+            A production-oriented Indian Railway tracking platform built with Next.js 15, FastAPI, PostgreSQL (Neon), Redis (Upstash), MapLibre GL, WebSockets, and a grounded LangGraph AI travel assistant.
+          </TypographyP>
+          <ProjectsLinks live={this.live} repo={this.github} />
+        </div>
+      );
+    },
+  },
   {
     id: "no-spoti",
     category: "Mobile / Decentralized Streaming",
@@ -160,7 +176,7 @@ const projects: Project[] = [
       backend: [PROJECT_SKILLS.restapi],
     },
     live: "https://github.com/Aniketchavan7/no-spoti-releases",
-    github: "https://github.com/Aniketchavan7/No-Spoti",
+    github: "https://github.com/Aniketchavan7/no-spoti-releases",
     get content() {
       return (
         <div>
@@ -169,22 +185,6 @@ const projects: Project[] = [
           </TypographyP>
           <TypographyP className="font-mono">
             Subscription-free music streaming app and progressive web application built with React Native (Expo SDK), Expo Router, Audius decentralized audio, and local SQLite library storage.
-          </TypographyP>
-          <ProjectsLinks live={this.live} repo={this.github} />
-        </div>
-      );
-    },
-  },
-    live: "https://railpulse.pages.dev",
-    github: "https://github.com/Aniketchavan7/Railway-App",
-    get content() {
-      return (
-        <div>
-          <TypographyP className="font-mono text-2xl text-center">
-            AI-Powered Indian Railway Tracking SaaS Engine
-          </TypographyP>
-          <TypographyP className="font-mono">
-            A production-oriented Indian Railway tracking platform built with Next.js 15, FastAPI, PostgreSQL (Neon), Redis (Upstash), MapLibre GL, WebSockets, and a grounded LangGraph AI travel assistant.
           </TypographyP>
           <ProjectsLinks live={this.live} repo={this.github} />
         </div>
